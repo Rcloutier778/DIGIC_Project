@@ -18,7 +18,7 @@ begin
     variable abs_s : real :=0.0;
     variable tfs : real :=0.0;
     begin
-        abs_s := s;
+        abs_s := abs(s);
         --fs <= s/(1+s);
         
         --abs value of s
