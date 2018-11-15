@@ -12,11 +12,10 @@ entity fast_sigmoid is
 end fast_sigmoid;
 
 architecture beh of fast_sigmoid is
-
+variable abs_s : real :=0.0;
+variable tfs : real :=0.0;
 begin
     process (s)
-    variable abs_s : real :=0.0;
-    variable tfs : real :=0.0;
     begin
         abs_s := s;
         --fs <= s/(1+s);

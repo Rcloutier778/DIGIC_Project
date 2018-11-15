@@ -1,0 +1,15 @@
+/tools/mentor/leonardo/2008b/bin/Linux/spectrum 
+-------------------------------------------------
+LeonardoSpectrum Level 3 - 2008b.3 (Release Production Release, compiled Dec  8 2008 at 13:18:31)
+Copyright 1990-2008 Mentor Graphics.  All rights reserved.
+Portions copyright 1991-2008 Compuware Corporation
+
+Checking Security ...
+
+   *** Welcome to Interactive LeonardoSpectrum Level 3 Version 2008b.3 ***
+
+News :
+  * Enter "help" to get an overview of all commands
+  * Enter <command> -help  to get usage of each command
+
+Session history will be logged to file '/home/rxc1028/digicdesign/project/leospec.his'

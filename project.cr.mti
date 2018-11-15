@@ -1,0 +1,28 @@
+/home/rxc1028/digicdesign/project/fast_sigmoid.vhd {0 {vcom -work work -2002 -explicit -novopt /home/rxc1028/digicdesign/project/fast_sigmoid.vhd
+QuestaSim-64 vcom 10.2c_6 Compiler 2013.12 Dec 17 2013
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity fast_sigmoid
+-- Compiling architecture beh of fast_sigmoid
+** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(25): No feasible entries for infix operator ">=".
+** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(25): Bad expression in left operand of infix expression "and".
+** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(25): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(26): No feasible entries for infix operator "*".
+** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(26): Bad expression in left operand of infix expression "+".
+** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(26): Bad right hand side (infix expression) in variable assignment.
+** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(27): No feasible entries for infix operator "<".
+** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(27): Bad expression in right operand of infix expression "and".
+** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(27): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(28): No feasible entries for infix operator "*".
+** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(28): Bad expression in left operand of infix expression "+".
+** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(28): Bad right hand side (infix expression) in variable assignment.
+** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(30): No feasible entries for infix operator "*".
+** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(30): Bad expression in left operand of infix expression "+".
+** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(30): Bad right hand side (infix expression) in variable assignment.
+** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(12): Variable declaration 'abs_s' not allowed in this region.
+** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(13): Variable declaration 'tfs' not allowed in this region.
+** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(38): VHDL Compiler exiting
+
+} {9.0 27.0} {}}
