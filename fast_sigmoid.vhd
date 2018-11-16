@@ -13,26 +13,32 @@ entity fast_sigmoid is
 end fast_sigmoid;
 
 architecture beh of fast_sigmoid is
-
+signal abs_s_int : unsigned(Qm+1 downto 0);
+signal abs_s : unsigned(Qm+Qn+1 downto 0);
+signal tfs : unsigned(Qn+Qm+1 downto 0) := (others=>'0');
 begin
     process (s)
-    signal tfs : unsigned(Qn+Qm+1 downto 0) := (others=>'0');
+    
 
     --Conditional Statements
-    constant case1_int : std_logic_vector(Qm+1 downto 0) := (1 => '1', others => '0');
-    constant case1_dec : std_logic_vector(2 downto 0) := "011";
-    constant case1_buffer : std_logic_vector(Qn-3 downto 0) := (others => '0');
-    constant case1 : unsigned(Qn+Qm+1 downto 0) := unsigned(case1_int & case1_dec & case1_buffer);
+    --Case1 = 5.0
+    constant case1_int : std_logic_vector(Qm+1 downto 0) := (3 => '1', 0=> '1', others => '0');
+    constant case1_dec : std_logic_vector(Qn downto 0) := (others=>'0');
+    constant case1 : unsigned(Qn+Qm+1 downto 0) := unsigned(case1_int & case1_dec);
     
-    constant case2_int : std_logic_vector(Qm+1 downto 0) := (0 => '1', others => '0');
-    constant case2_dec : std_logic_vector(Qn downto 0) := (others => '0');
-    constant case2 : unsigned(Qn+Qm+1 downto 0) := unsigned(case2_int & case2_dec);
+    --Case2 = 2.375
+    constant case2_int : std_logic_vector(Qm+1 downto 0) := (1 => '1', others => '0');
+    constant case2_dec : std_logic_vector(2 downto 0) := "011";
+    constant case2_buffer : std_logic_vector(Qn-3 downto 0) := (others => '0');
+    constant case2 : unsigned(Qn+Qm+1 downto 0) := unsigned(case2_int & case2_dec & case2_buffer);
     
-    
+    --Case3 = 1.0
     constant case3_int : std_logic_vector(Qm+1 downto 0) := (0 => '1', others => '0');
-    constant case3_dec : std_logic_vector(2 downto 0) := "101";
-    constant case3_buffer : std_logic_vector(Qn-3 downto 0) := (others => '0');
-    constant case3 : unsigned(Qn+Qm+1 downto 0) := unsigned(case3_int & case3_dec & case3_buffer);
+    constant case3_dec : std_logic_vector(Qn downto 0) := (others => '0');
+    constant case3 : unsigned(Qn+Qm+1 downto 0) := unsigned(case3_int & case3_dec);
+    
+    --Case4 = 0.0
+    constant case4 : unsigned(Qn+Qm+1 downto 0) := (others =>'0');
     
     --Multiplication
     constant case1_mult_int : std_logic_vector(Qm+1 downto 0) := (others => '0');
@@ -67,36 +73,34 @@ begin
     constant case3_add_buffer : std_logic_vector(Qn-1 downto 0) := (others => '0');
     constant case3_add : unsigned(Qn+Qm+1 downto 0) := unsigned(case3_add_int & '1' & case3_add_buffer);
  
-    signal abs_s_int : unsigned(Qm+1 downto 0);
-    signal abs_s : unsigned(Qm+Qn+1 downto 0);
+    
     begin
-        abs_s_int <= std_logic_vector(unsigned(s(Qn+Qm+1 downto Qn)));
-        abs_s <= unsigned(abs_s_int(Qm+1 downto 0) & s(Qn downto 0));
+        abs_s_int <= unsigned(std_logic_vector(abs(signed(s(Qn+Qm+1 downto Qn)))));
+        abs_s <= unsigned(abs_s_int(Qm+1 downto 0) & unsigned(s(Qn downto 0)));
         --fs <= s/(1+s);
         
         --abs value of s
         
         --
-        if (unsigned(abs_s_int) >= 5) then   --|X| >=5
+        if (unsigned(abs_s) >= case1) then   
+            --|X| >=5
+            --Y=1
             tfs(Qn+1)<='1';
         elsif (unsigned(abs_s) >= case1) and (unsigned(abs_s) >= 5) then
             --2.375 <= |X| < 5
-            tfs <= case1_mult * abs_s;
-            tfs_dec := std_logic_vector(to_unsigned(tfs_dec,Qn+1) + 84375);
-        elsif abs_s_int >= 1 and (abs_s_int < 2 and unsigned(s_dec) < 375) then
+            --Y=0.03125 |X| + 0.84375
+            tfs <= (case1_mult * abs_s) + case1_add;
+        elsif abs_s >= case3 and (abs_s < case2) then
             --1 <= |X| < 2.375
-            tfs := 0.125 * abs_s;
-            tfs_dec := std_logic_vector(to_unsigned(tfs_dec,Qn+1) + 625);
-        elsif abs_s_int >= 0 and abs_s_int < 1 then
+            tfs <= (case2_mult * abs_s) + case2_add;
+        elsif abs_s >= case4 and abs_s < case3 then
             --0 <= |X| < 1
-            tfs := 0.25 * abs_s_int;
-            tfs_dec := std_logic_vector(to_unsigned(tfs_dec,Qn+1) + 5);
+            tfs <= (case3_mult * abs_s) + case3_add;
         end if;
-        if s_int < 0 then
-            fs_int <= 1-tfs_int;
+        if signed(s(Qm+1 downto Qn+1)) < 0 then
+            fs <= std_logic_vector(signed(1-tfs(Qm+1 downto Qn+1))) & std_logic_vector(tfs(Qn downto 0));
         else
-            fs_int <= tfs_int;
+            fs <= std_logic_vector(tfs);
         end if;
-        fs_dec = tfs_dec;
     end process;
 end architecture beh;
