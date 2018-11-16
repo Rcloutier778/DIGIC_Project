@@ -42,7 +42,7 @@ begin
     GEN_FAS_SIGMOID:
     for I in 1 to L generate
         fast_sigmoidX : fast_sigmoid port map
-            (s(I), fs(I)) generic map (Qn);
+            (s(I), fs(I)) generic map (Qm,Qn);
     end generate GEN_FAST_SIGMOID;
     process (u)
     begin
