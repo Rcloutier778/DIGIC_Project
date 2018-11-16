@@ -22,18 +22,18 @@ begin
 
     --Conditional Statements
     --Case1 = 5.0
-    constant case1_int : std_logic_vector(Qm+1 downto 0) := (3 => '1', 0=> '1', others => '0');
+    constant case1_int : std_logic_vector(Qm+1 downto Qn+1) := (3 => '1', 0=> '1', others => '0');
     constant case1_dec : std_logic_vector(Qn downto 0) := (others=>'0');
     constant case1 : unsigned(Qn+Qm+1 downto 0) := unsigned(case1_int & case1_dec);
     
     --Case2 = 2.375
-    constant case2_int : std_logic_vector(Qm+1 downto 0) := (1 => '1', others => '0');
+    constant case2_int : std_logic_vector(Qm+1 downto Qn+1) := (1 => '1', others => '0');
     constant case2_dec : std_logic_vector(2 downto 0) := "011";
     constant case2_buffer : std_logic_vector(Qn-3 downto 0) := (others => '0');
     constant case2 : unsigned(Qn+Qm+1 downto 0) := unsigned(case2_int & case2_dec & case2_buffer);
     
     --Case3 = 1.0
-    constant case3_int : std_logic_vector(Qm+1 downto 0) := (0 => '1', others => '0');
+    constant case3_int : std_logic_vector(Qm+1 downto Qn+1) := (0 => '1', others => '0');
     constant case3_dec : std_logic_vector(Qn downto 0) := (others => '0');
     constant case3 : unsigned(Qn+Qm+1 downto 0) := unsigned(case3_int & case3_dec);
     
@@ -41,37 +41,40 @@ begin
     constant case4 : unsigned(Qn+Qm+1 downto 0) := (others =>'0');
     
     --Multiplication
-    constant case1_mult_int : std_logic_vector(Qm+1 downto 0) := (others => '0');
+    constant case1_mult_int : std_logic_vector(Qm+1 downto Qn+1) := (others => '0');
     constant case1_mult_dec : std_logic_vector(4 downto 0) := "00001";
     constant case1_mult_buffer : std_logic_vector(Qn-5 downto 0) := (others => '0');
     constant case1_mult : unsigned(Qn+Qm+1 downto 0) := unsigned(case1_mult_int & case1_mult_dec & case1_mult_buffer);
     
-    constant case2_mult_int : std_logic_vector(Qm+1 downto 0) := (others => '0');
+    constant case2_mult_int : std_logic_vector(Qm+1 downto Qn+1) := (others => '0');
     constant case2_mult_dec : std_logic_vector(2 downto 0) := "001";
     constant case2_mult_buffer : std_logic_vector(Qn-3 downto 0) := (others => '0');
     constant case2_mult : unsigned(Qn+Qm+1 downto 0) := unsigned(case2_mult_int & case2_mult_dec & case2_mult_buffer);
     
     
-    constant case3_mult_int : std_logic_vector(Qm+1 downto 0) := (others => '0');
+    constant case3_mult_int : std_logic_vector(Qm+1 downto Qn+1) := (others => '0');
     constant case3_mult_dec : std_logic_vector(1 downto 0) := "01";
     constant case3_mult_buffer : std_logic_vector(Qn-2 downto 0) := (others => '0');
     constant case3_mult : unsigned(Qn+Qm+1 downto 0) := unsigned(case3_mult_int & case3_mult_dec & case3_mult_buffer);
 
     --Addition
-    constant case1_add_int : std_logic_vector(Qm+1 downto 0) := (others => '0');
+    
+    --0.84375
+    constant case1_add_int : std_logic_vector(Qm+1 downto Qn+1) := (others => '0');
     constant case1_add_dec : std_logic_vector(4 downto 0) := "11011";
     constant case1_add_buffer : std_logic_vector(Qn-5 downto 0) := (others => '0');
     constant case1_add : unsigned(Qn+Qm+1 downto 0) := unsigned(case1_add_int & case1_add_dec & case1_add_buffer);
     
-    constant case2_add_int : std_logic_vector(Qm+1 downto 0) := (others => '0');
+    --0.625
+    constant case2_add_int : std_logic_vector(Qm+1 downto Qn+1) := (others => '0');
     constant case2_add_dec : std_logic_vector(2 downto 0) := "101";
     constant case2_add_buffer : std_logic_vector(Qn-3 downto 0) := (others => '0');
     constant case2_add : unsigned(Qn+Qm+1 downto 0) := unsigned(case2_add_int & case2_add_dec & case2_add_buffer);
     
-    
-    constant case3_add_int : std_logic_vector(Qm+1 downto 0) := (others => '0');
-    constant case3_add_buffer : std_logic_vector(Qn-1 downto 0) := (others => '0');
-    constant case3_add : unsigned(Qn+Qm+1 downto 0) := unsigned(case3_add_int & '1' & case3_add_buffer);
+    --0.5
+    constant case3_add_int : std_logic_vector(Qm+1 downto Qn+1) := (others => '0');
+    constant case3_add_dec : std_logic_vector(Qn downto 0) := (Qn => '1', others=>'0');
+    constant case3_add : unsigned(Qn+Qm+1 downto 0) := unsigned(case3_add_int & case3_add_dec);
  
     
     begin
