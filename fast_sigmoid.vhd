@@ -78,8 +78,7 @@ begin
  
     
     begin
-        abs_s_int <= unsigned(std_logic_vector(abs(signed(s(Qn+Qm+1 downto Qn)))));
-        abs_s <= unsigned(abs_s_int(Qm+1 downto 0) & unsigned(s(Qn downto 0)));
+        abs_s <= unsigned(std_logic_vector(abs(signed(s(Qn+Qm+1 downto 0)))));
         --fs <= s/(1+s);
         
         --abs value of s
@@ -100,8 +99,8 @@ begin
             --0 <= |X| < 1
             tfs <= (case3_mult * abs_s) + case3_add;
         end if;
-        if signed(s(Qm+1 downto Qn+1)) < 0 then
-            fs <= std_logic_vector(signed(1-tfs(Qm+1 downto Qn+1))) & std_logic_vector(tfs(Qn downto 0));
+        if s(Qn+Qm+1) = '1' then
+            fs <= std_logic_vector(signed(1-tfs(Qm+Qn+1 downto 0)));
         else
             fs <= std_logic_vector(tfs);
         end if;
