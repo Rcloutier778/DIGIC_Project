@@ -1,6 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
-
+use ieee.numeric_std.all;
 
 --N, H, M
 
@@ -21,30 +21,38 @@ entity mlp_model is
 end mlp_model;
 
 architecture beh of mlp_model is
+  
     -- x is 2D integer array
     --type x2 is array (0 to (N*(Qm+Qn+1))) of real;
     --type x is array (0 to L) of x2;
-    type x is array (0 to L)  of real;
+    type xtype is array (0 to H)  of std_logic_vector(1+Qm+Qn downto 0);
+    signal x : xtype := (others => (others => '0'));
     --Weights
-    type W is array (0 to N+H+1) of real; --0,1, ... N,N+1, ... N+H+1
-    type s is array (1 to L) of real := 0.0;
+    type Wtype is array (0 to N+H+1, 0 to N+H+1) of std_logic_vector(1+Qm+Qn downto 0); --0,1, ... N,N+1, ... N+H+1
+    signal W : Wtype;    
+    type stype is array (1 to N+H+1) of std_logic_vector(1+Qm+Qn downto 0);-- := (others=> (others => '0'));
+    signal s : stype := (others => (others=>'0'));
+    type fstype is array (1 to N+H+1) of std_logic_vector(1+Qm+Qn downto 0);
+    signal fs : fstype := (others => (others=> '0'));
     --variable s : real := 0.0;
-    variable a : integer; --loop 
-    variable L : integer; --size of x, must be set
-    variable b : integer;
-    variable tempS : real := 0.0;
+    
     component fast_sigmoid
         port(
-            s : in integer;
-            fs : out integer);
+            s : in std_logic_vector(Qm+Qn+1 downto 0);
+            fs : out std_logic_vector(Qm+Qn+1 downto 0));
     end component;
 begin
-    GEN_FAS_SIGMOID:
-    for I in 1 to L generate
-        fast_sigmoidX : fast_sigmoid port map
-            (s(I), fs(I)) generic map (Qm,Qn);
+    
+    GEN_FAST_SIGMOID:
+    for I in 1 to H generate
+        fast_sigmoidX : fast_sigmoid 
+            generic map (Qn=>Qn, Qm=>Qm) 
+            port map (s(I+N+1), fs(I+N+1)) ;
     end generate GEN_FAST_SIGMOID;
     process (u)
+    variable a : integer; --loop 
+    variable b : integer;
+    variable tempS : signed(1+Qm+Qn downto 0) := (others=>'0');
     begin
         --y=hw(u)
         --x(1) = u
@@ -56,15 +64,16 @@ begin
         
         --activation function
         --u has 1 signed bit, m integer bits, n decimal bits
-        x(0) := Real(to_integer(unsigned(u)))/(10*n);
+        x(0) <= std_logic_vector(signed(u));
         --x(0)(a) := Real(to_integer(unsigned'('0' & u(a))));
-        for a in 1 to L loop
+        for a in 1 to H loop
             --s = --W^L DOT x^(l-L)
-            tempS := 0.0;
-            for b in 1 to W'range loop            
-                tempS := tempS + (x(a-1) * W(b));
-            s(a) := tempS;
-            x(a) := fs(a)
+            tempS := (others=>'0');
+            for b in 1 to N+H+1 loop            
+                tempS := tempS + (signed(x(a-1)) * signed(W(N+a,b)));
+            s(a) <= std_logic_vector(tempS);
+            x(a) <= fs(a);
+            end loop;
         end loop;
 
 
@@ -72,3 +81,4 @@ begin
 
 
 end architecture beh;
+end;

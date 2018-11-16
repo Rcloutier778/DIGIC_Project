@@ -1,34 +1,4 @@
-/home/rxc1028/digicdesign/project/mlp_model.vhd {0 {vcom -work work -2002 -explicit -novopt /home/rxc1028/digicdesign/project/mlp_model.vhd
-QuestaSim-64 vcom 10.2c_6 Compiler 2013.12 Dec 17 2013
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity mlp_model
--- Compiling architecture beh of mlp_model
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(27): (vcom-1136) Unknown identifier "L".
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(27): Cannot resolve expression type.
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(27): Type error in range expression.
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(30): (vcom-1136) Unknown identifier "L".
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(30): Cannot resolve expression type.
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(30): Type error in range expression.
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(30): near ":=": expecting ';'
-** Warning: /home/rxc1028/digicdesign/project/mlp_model.vhd(43): (vcom-1147) Range in FOR GENERATE must be static.
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(45): (vcom-1436) Actual expression (indexed name) of formal "s" is not globally static.
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(45): (vcom-1136) Unknown identifier "s".
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(45): (vcom-1454) Formal "fs" of mode OUT cannot be associated with an expression.
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(45): (vcom-1348) Prefix (physical literal) of indexed name is not an array.
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(46): Labels do not match: 'GEN_FAS_SIGMOID' and 'GEN_FAST_SIGMOID'.
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(59): No feasible entries for infix operator "/".
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(59): Illegal target for assignment.
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(59): Bad right hand side (infix expression) in variable assignment.
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(64): Illegal use of range.
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(65): No feasible entries for infix operator "*".
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(65): Bad expression in right operand of infix expression "+".
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(65): Bad right hand side (infix expression) in variable assignment.
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(66): (vcom-1136) Unknown identifier "s".
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(68): near "end": expecting ';'
-
-} {8.0 15.0 16.0 30.0} {}} /home/rxc1028/digicdesign/project/fast_sigmoid.vhd {0 {vcom -work work -2002 -explicit -novopt /home/rxc1028/digicdesign/project/fast_sigmoid.vhd
+/home/rxc1028/digicdesign/project/fast_sigmoid.vhd {2 {vcom -work work -2002 -explicit -novopt /home/rxc1028/digicdesign/project/fast_sigmoid.vhd
 QuestaSim-64 vcom 10.2c_6 Compiler 2013.12 Dec 17 2013
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -36,57 +6,39 @@ QuestaSim-64 vcom 10.2c_6 Compiler 2013.12 Dec 17 2013
 -- Loading package NUMERIC_STD
 -- Compiling entity fast_sigmoid
 -- Compiling architecture beh of fast_sigmoid
-** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(22): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
-** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(27): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
-** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(32): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(84): No feasible entries for infix operator "*".
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(84): Type error resolving infix expression "*" as type ieee.NUMERIC_STD.UNSIGNED.
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(85): (vcom-1136) Unknown identifier "tfs_dec".
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(85): (vcom-1136) Unknown identifier "tfs_dec".
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(85): Target type (error) in variable assignment is different from expression type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(85): (vcom-1136) Unknown identifier "tfs_dec".
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(85): Cannot resolve expression type of infix expression.
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(85): Illegal type conversion to ieee.std_logic_1164.STD_LOGIC_VECTOR (operand type is not known).
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(86): No feasible entries for infix operator ">=".
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(86): No feasible entries for infix operator "<".
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(86): Bad expression in left operand of infix expression "and".
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(86): Bad expression in left operand of infix expression "and".
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(86): Bad expression in right operand of infix expression "and".
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(86): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(88): No feasible entries for infix operator "*".
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(88): Signal "tfs" cannot be target of variable assignment statement.
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(88): Bad right hand side (infix expression) in variable assignment.
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(89): (vcom-1136) Unknown identifier "tfs_dec".
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(89): (vcom-1136) Unknown identifier "tfs_dec".
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(89): Target type (error) in variable assignment is different from expression type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(89): (vcom-1136) Unknown identifier "tfs_dec".
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(89): Cannot resolve expression type of infix expression.
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(89): Illegal type conversion to ieee.std_logic_1164.STD_LOGIC_VECTOR (operand type is not known).
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(90): No feasible entries for infix operator ">=".
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(90): No feasible entries for infix operator "<".
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(90): Bad expression in left operand of infix expression "and".
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(90): Bad expression in right operand of infix expression "and".
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(90): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(92): No feasible entries for infix operator "*".
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(92): Signal "tfs" cannot be target of variable assignment statement.
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(92): Bad right hand side (infix expression) in variable assignment.
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(93): (vcom-1136) Unknown identifier "tfs_dec".
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(93): (vcom-1136) Unknown identifier "tfs_dec".
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(93): Target type (error) in variable assignment is different from expression type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(93): (vcom-1136) Unknown identifier "tfs_dec".
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(93): Cannot resolve expression type of infix expression.
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(93): Illegal type conversion to ieee.std_logic_1164.STD_LOGIC_VECTOR (operand type is not known).
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(95): (vcom-1136) Unknown identifier "s_int".
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(95): Type error resolving infix expression "<" as type std.STANDARD.BOOLEAN.
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(96): Illegal target for signal assignment.
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(96): (vcom-1136) Unknown identifier "tfs_int".
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(96): (vcom-1136) Unknown identifier "fs_int".
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(98): Illegal target for signal assignment.
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(98): (vcom-1136) Unknown identifier "fs_int".
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(100): near "=": expecting <= or :=
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(19): Signal declaration 'tfs' not allowed in this region.
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(70): Signal declaration 'abs_s_int' not allowed in this region.
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(71): Signal declaration 'abs_s' not allowed in this region.
-** Error: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(102): VHDL Compiler exiting
+** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(25): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
+** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(30): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
+** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(36): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
+** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(76): (vcom-1073) Non-locally static choice (association #1, choice #1) is allowed only if it is the only choice of the only association.
 
-} {12.0 61.0} {}}
+} {} {}} /home/rxc1028/digicdesign/project/mlp_model.vhd {0 {vcom -work work -2002 -explicit -novopt /home/rxc1028/digicdesign/project/mlp_model.vhd
+QuestaSim-64 vcom 10.2c_6 Compiler 2013.12 Dec 17 2013
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mlp_model
+-- Compiling architecture beh of mlp_model
+** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(45): (vcom-1022) Formal part (infix expression) does not depict an interface object.
+** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(45): (vcom-1022) Formal part (infix expression) does not depict an interface object.
+** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(45): (vcom-1022) Formal part (infix expression) does not depict an interface object.
+** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(45): (vcom-1022) Formal part (infix expression) does not depict an interface object.
+** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(46): Labels do not match: 'GEN_FAS_SIGMOID' and 'GEN_FAST_SIGMOID'.
+** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(59): (vcom-1136) Unknown identifier "signed".
+** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(59): (vcom-1136) Unknown identifier "unsigned".
+** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(59): Illegal target for assignment.
+** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(59): Target type (error) in variable assignment is different from expression type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(59): Illegal type conversion from Integer to x (numeric to array).
+** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(59): Type conversion (to x) conflicts with expected type (error).
+** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(59): Cannot resolve expression type of infix expression.
+** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(59): Illegal type conversion to ieee.std_logic_1164.STD_LOGIC_VECTOR (operand type is not known).
+** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(64): Illegal use of range.
+** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(65): No feasible entries for infix operator "*".
+** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(65): Bad expression in right operand of infix expression "+".
+** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(65): Bad right hand side (infix expression) in variable assignment.
+** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(66): Illegal target for assignment.
+** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(66): Target type (error) in variable assignment is different from expression type std.STANDARD.REAL.
+** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(66): Illegal type conversion from std.STANDARD.INTEGER to s (numeric to array).
+** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(66): Type conversion (to s) conflicts with expected type (error).
+** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(68): near "end": expecting ';'
+
+} {8.0 30.0} {}}
