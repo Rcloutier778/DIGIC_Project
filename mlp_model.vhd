@@ -16,7 +16,6 @@ entity mlp_model is
         reset : in std_logic;
         SI : in std_logic; --scan chain input (serial input used to set all weights and bias values in network for testing)
         SE : in std_logic; --
-        clk : in std_logic;
         u : in std_logic_vector(N*(Qm+Qn+1) downto 0);
         yhat : out std_logic_vector(M*(Qm+Qn+1) downto 0));
 
@@ -24,10 +23,10 @@ end mlp_model;
 
 architecture beh of mlp_model is
   
-    type xtype is array (0 to N+H+1)  of std_logic_vector(1+Qm+Qn downto 0);
+    type xtype is array (0 to N+H+1+M)  of std_logic_vector(1+Qm+Qn downto 0);
     signal x : xtype := (others => (others => '0'));
     --Weights
-    type Wtype is array (0 to N+H+1) of std_logic_vector(1+Qm+Qn downto 0); --0,1, ... N,N+1, ... N+H+1
+    type Wtype is array (0 to N+H+1+M, 0 to N+H+1+M) of std_logic_vector(1+Qm+Qn downto 0); --0,1, ... N,N+1, ... N+H+1
     signal W : Wtype;    
     type stype is array (0 to N+H+1) of std_logic_vector(1+Qm+Qn downto 0);-- := (others=> (others => '0'));
     signal s : stype := (others => (others=>'0'));
@@ -53,23 +52,46 @@ begin
     variable b : integer;
     variable tempS : signed(1+Qm+Qn downto 0) := (others=>'0');
     variable W_Index_Counter : integer :=0;
+    variable W_Node_Counter : integer :=0;
+    variable W_Node_Counter2 : integer :=0;
     begin
         if (reset = '0') then
             --Reset is just power input 
             x <= (others => (others => '0'));
-            W <= (others => (others => '0'));
+            for a in 0 to N+H+1+M loop
+                for b in 0 to N+H+1+M loop
+                    W(a,b) <= (others => '0');
+                end loop;
+            end loop;
             s <= (others => (others => '0'));
             fs <= (others => (others => '0'));
             W_Index_Counter := 0;
+            W_Node_Counter := 0;
+            W_Node_Counter2 := 0;
+            yhat <= (others => '0');
+            
         else
             if (clk = '1' and clk'event) then
                 --Rising clock edge
                 if (SE = '1') then
                     --Read in weights from SI, 1 bit at a time
-                    if (W_Index_Counter <= to_Integer(N+H+1)) then
+                    if (W_Node_Counter <= N+H+1+M) then
                         --Check to make sure it doesn't overrun index bounds
-                        W(W_Index_Counter) = SI;
-                        W_Index_Counter = W_Index_Counter + 1;
+                        W(W_Node_Counter,W_Node_Counter2)(W_Index_Counter) <= SI;
+                        if W_Index_Counter = Qm+Qn+1 then
+                            W_Index_Counter := 0;
+                            --If at end of Node, go to next node and start at 0
+                            if W_Node_Counter2 = N+H+1+M then
+                                W_Node_Counter := W_Node_Counter +1;
+                                W_Node_Counter2 := 0;
+                            else
+                                W_Node_Counter2 := W_Node_Counter2 +1;
+                            end if;
+                        else
+                            --Increment index
+                            W_Index_Counter := W_Index_Counter + 1;
+                        end if;
+                        
                     end if;
                 else
                     --y=hw(u)
@@ -79,21 +101,39 @@ begin
                     --f(s) = 1/(1+e^(-s)) --sigmoid
                     --fast sigmoid: f(s) = s/(1+abs(s))
                     --TODO put all real into Qm.n format for performance?
+                    -- l is the layer
                     
                     --activation function
                     --u has 1 signed bit, m integer bits, n decimal bits
-                    for a in 0 to N loop
+                    for a in 0 to N+1 loop
                         --All inputs and the bias of H are u, rest use sigmoid
                         x(a) <= std_logic_vector(signed(u(((N-a)*(Qm+Qn+1)) downto ((N-1-a)*(Qm+Qn+1)))));
                     end loop;
-                    --TODO: Parallelize the dot product calc?
-                    for a in N+1 to N+H+1 loop
+                    
+                    --Hidden layer
+                    for a in N+2 to N+H+1 loop --For each node in hidden layer
                         --s = --W^L DOT x^(l-L)
                         tempS := (others=>'0');
-                        for b in 1 to N+H+1 loop            
-                            tempS := tempS + (signed(x(a-1)) * signed(W(a,b)));
+                        for b in 0 to N loop  --For weights 0 to N in the node 
+                            --W(Node weight row in current layer, Node from previous layer acting on it)
+                            --   == Weight of node in previous layer acting on node on current layer
+                            tempS := tempS + (signed(W(a,b)) * signed(x(b)));
                         s(a) <= std_logic_vector(tempS);
                         x(a) <= fs(a);
+                        end loop;
+                    end loop;
+                    
+                    --Output layer
+                    for a in N+H+2 to N+H+1+M loop --For each node in output layer
+                        --s = --W^L DOT x^(l-L)
+                        tempS := (others=>'0');
+                        for b in N+1 to N+1+H loop  --For weights 0 to N in the node 
+                            --W(Node weight row in current layer, Node from previous layer acting on it)
+                            --   == Weight of node in previous layer acting on node on current layer
+                            tempS := tempS + (signed(W(a,b)) * signed(x(b)));
+                        s(a) <= std_logic_vector(tempS);
+                        x(a) <= fs(a);
+                        yhat((a-(N+H+2))*(Qm+Qn+1) downto ( (a-(N+H+1)) *(Qm+Qn+1) )   ) <= x(a);
                         end loop;
                     end loop;
                 end if;
