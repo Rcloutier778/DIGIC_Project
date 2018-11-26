@@ -11,6 +11,8 @@ wmin = -1;
 nu = 9;
 nh = 20; 
 ny = 1;
+Qn = 4;
+Qm = 4;
 epochs = 1000;
 
 % Setup the training vectors
@@ -71,8 +73,56 @@ xlabel('Epoch');
 ylabel('MSE');
 title('Training Error vs. Training Epoch (iteration)');
 
+OldW = n.A.*n.W;
+counter = 1;
+
+for i = 1:1+nu+nh+ny
+    for j = 1:1+nu+nh+ny
+        a = OldW(i,j);
+        if (a < 0)
+            pos = 1;
+        else 
+            pos = 0;
+        end
+        d2b_num = fix(rem(fix(a)*pow2(-(Qn-1):0),2));
+        d2b_dec = fix(rem( rem(a,1)*pow2(1:Qm),2));
+        if (pos == 1)
+            for x = 1:Qn
+                if (d2b_num(x) == 0)
+                    d2b_num(x) = 1;
+                else 
+                    d2b_num(x) = 0;
+                end
+                
+                if (d2b_dec(x) == 0)
+                    d2b_dec(x) = 1;
+                else
+                    d2b_dec(x) = 0;
+                end
+            end
+        end
+        s1 = num2str(pos);
+        for QnnCounter = 1:length(d2b_num)
+            s2 = num2str(d2b_num(1,QnnCounter));
+            s1 = strcat(s1,s2);
+        end
+        for QmmCounter = 1:length(d2b_dec)
+            s2 = num2str(d2b_num(1,QmmCounter));
+            s1 = strcat(s1,s2);
+        end
+        s1 = string(s1);
+        FinalW(counter,1) = s1;
+        counter = counter + 1;
+    end
+end
+
 % Write the weight matrix
-dlmwrite('W.dat',n.A.*n.W);
+%dlmwrite('W.dat',FinalW);
+fileID = fopen('W.dat','wt');
+for (total = 1:31*31)
+    fprintf(fileID, '%s\n', FinalW(total));
+end
+fclose(fileID);
 
 % Try it out on the images
 files = {'test1.txt' 'test2.txt' 'test3.txt' 'test4.txt'};
