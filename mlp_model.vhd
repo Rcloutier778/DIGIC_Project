@@ -6,11 +6,11 @@ use ieee.numeric_std.all;
 
 entity mlp_model is
     generic (
-        N : integer; -- # inputs
-        H : integer; -- # hidden
-        M : integer; -- # outputs
-        Qm : integer; -- for Qm.m # of integer bits
-        Qn : integer); --for Qm.n # of decimal bits.  Look at part 4 for better explanation
+        N : integer :=0; -- # inputs
+        H : integer :=0; -- # hidden
+        M : integer :=0; -- # outputs
+        Qm : integer :=0; -- for Qm.m # of integer bits
+        Qn : integer :=0); --for Qm.n # of decimal bits.  Look at part 4 for better explanation
     port (
         clk : in std_logic;
         reset : in std_logic;
@@ -23,20 +23,21 @@ end mlp_model;
 
 architecture beh of mlp_model is
   
-    type xtype is array (0 to N+H+1+M)  of std_logic_vector(1+Qm+Qn downto 0);
+    type xtype is array (0 to N+H+1+M)  of std_logic_vector(Qm+Qn downto 0);
     signal x : xtype := (others => (others => '0'));
     --Weights
-    type Wtype is array (0 to N+H+1+M, 0 to N+H+1+M) of std_logic_vector(1+Qm+Qn downto 0); --0,1, ... N,N+1, ... N+H+1
+    type Wtype is array (0 to N+H+1+M, 0 to N+H+1+M) of std_logic_vector(Qm+Qn downto 0); --0,1, ... N,N+1, ... N+H+1
     signal W : Wtype;    
-    type stype is array (0 to N+H+1) of std_logic_vector(1+Qm+Qn downto 0);-- := (others=> (others => '0'));
+    type stype is array (0 to N+H+1) of std_logic_vector(Qm+Qn downto 0);-- := (others=> (others => '0'));
     signal s : stype := (others => (others=>'0'));
-    type fstype is array (0 to N+H+1) of std_logic_vector(1+Qm+Qn downto 0);
+    type fstype is array (0 to N+H+1) of std_logic_vector(Qm+Qn downto 0);
     signal fs : fstype := (others => (others=> '0'));
     
     component fast_sigmoid
+        generic( Qn : integer; Qm : integer);
         port(
-            s : in std_logic_vector(Qm+Qn+1 downto 0);
-            fs : out std_logic_vector(Qm+Qn+1 downto 0));
+            s : in std_logic_vector(Qm+Qn downto 0);
+            fs : out std_logic_vector(Qm+Qn downto 0));
     end component;
 begin
     
@@ -44,13 +45,13 @@ begin
     for I in 1 to H generate
         fast_sigmoidX : fast_sigmoid 
             generic map (Qn=>Qn, Qm=>Qm) 
-            port map (s(I+N+1), fs(I+N+1)) ;
+            port map (s=> s(I+N+1), fs => fs(I+N+1)) ;
     end generate GEN_FAST_SIGMOID;
     
     process (clk, reset, u, SE)
     variable a : integer; --loop 
     variable b : integer;
-    variable tempS : signed(1+Qm+Qn downto 0) := (others=>'0');
+    variable tempS : signed(Qm+Qn downto 0) := (others=>'0');
     variable W_Index_Counter : integer :=0;
     variable W_Node_Counter : integer :=0;
     variable W_Node_Counter2 : integer :=0;
@@ -78,7 +79,7 @@ begin
                     if (W_Node_Counter <= N+H+1+M) then
                         --Check to make sure it doesn't overrun index bounds
                         W(W_Node_Counter,W_Node_Counter2)(W_Index_Counter) <= SI;
-                        if W_Index_Counter = Qm+Qn+1 then
+                        if W_Index_Counter = Qm+Qn then
                             W_Index_Counter := 0;
                             --If at end of Node, go to next node and start at 0
                             if W_Node_Counter2 = N+H+1+M then
@@ -107,7 +108,7 @@ begin
                     --u has 1 signed bit, m integer bits, n decimal bits
                     for a in 0 to N+1 loop
                         --All inputs and the bias of H are u, rest use sigmoid
-                        x(a) <= std_logic_vector(signed(u(((N-a)*(Qm+Qn+1)) downto ((N-1-a)*(Qm+Qn+1)))));
+                        x(a) <= std_logic_vector(signed(u(((N-a)*(Qm+Qn)) downto ((N-1-a)*(Qm+Qn)))));
                     end loop;
                     
                     --Hidden layer
@@ -133,7 +134,7 @@ begin
                             tempS := tempS + (signed(W(a,b)) * signed(x(b)));
                         s(a) <= std_logic_vector(tempS);
                         x(a) <= fs(a);
-                        yhat((a-(N+H+2))*(Qm+Qn+1) downto ( (a-(N+H+1)) *(Qm+Qn+1) )   ) <= x(a);
+                        yhat((a-(N+H+2))*(Qm+Qn) downto ( (a-(N+H+1)) *(Qm+Qn) )   ) <= x(a);
                         end loop;
                     end loop;
                 end if;
