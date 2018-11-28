@@ -6,16 +6,16 @@ use ieee.numeric_std.all;
 
 
 entity fast_sigmoid is
-    generic(Qn : integer; Qm : integer);
+    generic(Qn : integer:=0; Qm : integer:=0);
     port(
-        s : in std_logic_vector(Qn+Qm+1 downto 0);
-        fs : out std_logic_vector(Qn+Qm+1 downto 0));
+        s : in std_logic_vector(Qn+Qm downto 0);
+        fs : out std_logic_vector(Qn+Qm downto 0));
 end fast_sigmoid;
 
 architecture beh of fast_sigmoid is
-signal abs_s_int : unsigned(Qm+1 downto 0);
-signal abs_s : unsigned(Qm+Qn+1 downto 0);
-signal tfs : unsigned(Qn+Qm+1 downto 0) := (others=>'0');
+signal abs_s_int : unsigned(Qm downto 0);
+signal abs_s : unsigned(Qm+Qn downto 0);
+signal tfs : unsigned(Qn+Qm downto 0) := (others=>'0');
 begin
     process (s)
     
@@ -99,8 +99,8 @@ begin
             --0 <= |X| < 1
             tfs <= (case3_mult * abs_s) + case3_add;
         end if;
-        if s(Qn+Qm+1) == '1' then
-            fs <= std_logic_vector(signed(1-tfs(Qm+Qn+1 downto 0)));
+        if s(Qn+Qm) = '1' then
+            fs <= std_logic_vector(signed(1-tfs(Qm+Qn downto 0)));
         else
             fs <= std_logic_vector(tfs);
         end if;

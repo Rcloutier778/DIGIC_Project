@@ -1,4 +1,43 @@
-/home/rxc1028/digicdesign/project/fast_sigmoid.vhd {2 {vcom -work work -2002 -explicit -novopt /home/rxc1028/digicdesign/project/fast_sigmoid.vhd
+/home/rxc1028/digicdesign/project/testbench.vhd {2 {vcom -work work -2002 -explicit -novopt /home/rxc1028/digicdesign/project/testbench.vhd
+QuestaSim-64 vcom 10.2c_6 Compiler 2013.12 Dec 17 2013
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity testbench
+-- Compiling architecture beh of testbench
+** Warning: [4] /home/rxc1028/digicdesign/project/testbench.vhd(47): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [9] /home/rxc1028/digicdesign/project/testbench.vhd(53): (vcom-1049) Actual for generic "N" depends on value of signal "N".
+** Warning: [9] /home/rxc1028/digicdesign/project/testbench.vhd(54): (vcom-1049) Actual for generic "H" depends on value of signal "H".
+** Warning: [9] /home/rxc1028/digicdesign/project/testbench.vhd(55): (vcom-1049) Actual for generic "M" depends on value of signal "M".
+** Warning: [9] /home/rxc1028/digicdesign/project/testbench.vhd(56): (vcom-1049) Actual for generic "Qm" depends on value of signal "Qm".
+** Warning: [9] /home/rxc1028/digicdesign/project/testbench.vhd(57): (vcom-1049) Actual for generic "Qn" depends on value of signal "Qn".
+** Warning: [9] /home/rxc1028/digicdesign/project/testbench.vhd(76): (vcom-1013) Subtype of "ieee.std_logic_1164.STD_LOGIC_VECTOR" depends on value of signal "Qn".
+** Warning: [9] /home/rxc1028/digicdesign/project/testbench.vhd(76): (vcom-1013) Subtype of "ieee.std_logic_1164.STD_LOGIC_VECTOR" depends on value of signal "Qm".
+** Warning: [9] /home/rxc1028/digicdesign/project/testbench.vhd(77): (vcom-1013) Type "Wtype" depends on value of signal "M".
+** Warning: [9] /home/rxc1028/digicdesign/project/testbench.vhd(77): (vcom-1013) Type "Wtype" depends on value of signal "H".
+** Warning: [9] /home/rxc1028/digicdesign/project/testbench.vhd(77): (vcom-1013) Type "Wtype" depends on value of signal "N".
+** Warning: [9] /home/rxc1028/digicdesign/project/testbench.vhd(77): (vcom-1013) Type "Wtype" depends on value of signal "M".
+** Warning: [9] /home/rxc1028/digicdesign/project/testbench.vhd(77): (vcom-1013) Type "Wtype" depends on value of signal "H".
+** Warning: [9] /home/rxc1028/digicdesign/project/testbench.vhd(77): (vcom-1013) Type "Wtype" depends on value of signal "N".
+** Warning: [9] /home/rxc1028/digicdesign/project/testbench.vhd(41): (vcom-1013) Subtype of "ieee.std_logic_1164.STD_LOGIC_VECTOR" depends on value of signal "N".
+** Warning: [9] /home/rxc1028/digicdesign/project/testbench.vhd(41): (vcom-1013) Subtype of "ieee.std_logic_1164.STD_LOGIC_VECTOR" depends on value of signal "Qn".
+** Warning: [9] /home/rxc1028/digicdesign/project/testbench.vhd(41): (vcom-1013) Subtype of "ieee.std_logic_1164.STD_LOGIC_VECTOR" depends on value of signal "Qm".
+** Warning: [9] /home/rxc1028/digicdesign/project/testbench.vhd(44): (vcom-1013) Subtype of "ieee.std_logic_1164.STD_LOGIC_VECTOR" depends on value of signal "M".
+** Warning: [9] /home/rxc1028/digicdesign/project/testbench.vhd(44): (vcom-1013) Subtype of "ieee.std_logic_1164.STD_LOGIC_VECTOR" depends on value of signal "Qn".
+** Warning: [9] /home/rxc1028/digicdesign/project/testbench.vhd(44): (vcom-1013) Subtype of "ieee.std_logic_1164.STD_LOGIC_VECTOR" depends on value of signal "Qm".
+
+} {} {}} /home/rxc1028/digicdesign/project/mlp_model.vhd {1 {vcom -work work -2002 -explicit -novopt /home/rxc1028/digicdesign/project/mlp_model.vhd
+QuestaSim-64 vcom 10.2c_6 Compiler 2013.12 Dec 17 2013
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity mlp_model
+-- Compiling architecture beh of mlp_model
+
+} {} {}} /home/rxc1028/digicdesign/project/fast_sigmoid.vhd {2 {vcom -work work -2002 -explicit -novopt /home/rxc1028/digicdesign/project/fast_sigmoid.vhd
 QuestaSim-64 vcom 10.2c_6 Compiler 2013.12 Dec 17 2013
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -6,39 +45,9 @@ QuestaSim-64 vcom 10.2c_6 Compiler 2013.12 Dec 17 2013
 -- Loading package NUMERIC_STD
 -- Compiling entity fast_sigmoid
 -- Compiling architecture beh of fast_sigmoid
-** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(25): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
-** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(30): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
-** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(36): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
-** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(76): (vcom-1073) Non-locally static choice (association #1, choice #1) is allowed only if it is the only choice of the only association.
+** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(26): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
+** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(31): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
+** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(37): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
+** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(77): (vcom-1073) Non-locally static choice (association #1, choice #1) is allowed only if it is the only choice of the only association.
 
-} {} {}} /home/rxc1028/digicdesign/project/mlp_model.vhd {0 {vcom -work work -2002 -explicit -novopt /home/rxc1028/digicdesign/project/mlp_model.vhd
-QuestaSim-64 vcom 10.2c_6 Compiler 2013.12 Dec 17 2013
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity mlp_model
--- Compiling architecture beh of mlp_model
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(45): (vcom-1022) Formal part (infix expression) does not depict an interface object.
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(45): (vcom-1022) Formal part (infix expression) does not depict an interface object.
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(45): (vcom-1022) Formal part (infix expression) does not depict an interface object.
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(45): (vcom-1022) Formal part (infix expression) does not depict an interface object.
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(46): Labels do not match: 'GEN_FAS_SIGMOID' and 'GEN_FAST_SIGMOID'.
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(59): (vcom-1136) Unknown identifier "signed".
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(59): (vcom-1136) Unknown identifier "unsigned".
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(59): Illegal target for assignment.
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(59): Target type (error) in variable assignment is different from expression type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(59): Illegal type conversion from Integer to x (numeric to array).
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(59): Type conversion (to x) conflicts with expected type (error).
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(59): Cannot resolve expression type of infix expression.
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(59): Illegal type conversion to ieee.std_logic_1164.STD_LOGIC_VECTOR (operand type is not known).
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(64): Illegal use of range.
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(65): No feasible entries for infix operator "*".
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(65): Bad expression in right operand of infix expression "+".
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(65): Bad right hand side (infix expression) in variable assignment.
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(66): Illegal target for assignment.
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(66): Target type (error) in variable assignment is different from expression type std.STANDARD.REAL.
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(66): Illegal type conversion from std.STANDARD.INTEGER to s (numeric to array).
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(66): Type conversion (to s) conflicts with expected type (error).
-** Error: /home/rxc1028/digicdesign/project/mlp_model.vhd(68): near "end": expecting ';'
-
-} {8.0 30.0} {}}
+} {} {}}
