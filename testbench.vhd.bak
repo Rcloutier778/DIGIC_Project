@@ -4,10 +4,10 @@ use ieee.numeric_std.all;
 use STD.textio.all;
 use ieee.std_logic_textio.all;
 
-entity mlp_model is
-end mlp_model;
+entity testbench is
+end testbench;
 
-architecture beh of mlp_model is
+architecture beh of testbench is
     component mlp_model 
     generic (
         N : integer; -- # inputs
@@ -20,8 +20,8 @@ architecture beh of mlp_model is
         reset : in std_logic;
         SI : in std_logic; --scan chain input (serial input used to set all weights and bias values in network for testing)
         SE : in std_logic; --
-        u : in std_logic_vector(N*(Qm+Qn+1) downto 0);
-        yhat : out std_logic_vector(M*(Qm+Qn+1) downto 0));
+        u : in std_logic_vector(N*(Qm+Qn+1)-1 downto 0);
+        yhat : out std_logic_vector(M*(Qm+Qn+1)-1 downto 0));
     end component;
 
 --Signals

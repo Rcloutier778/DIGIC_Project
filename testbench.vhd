@@ -20,8 +20,8 @@ architecture beh of testbench is
         reset : in std_logic;
         SI : in std_logic; --scan chain input (serial input used to set all weights and bias values in network for testing)
         SE : in std_logic; --
-        u : in std_logic_vector(N*(Qm+Qn+1) downto 0);
-        yhat : out std_logic_vector(M*(Qm+Qn+1) downto 0));
+        u : in std_logic_vector(N*(Qm+Qn+1)-1 downto 0);
+        yhat : out std_logic_vector(M*(Qm+Qn+1)-1 downto 0));
     end component;
 
 --Signals
@@ -38,10 +38,10 @@ signal clk : std_logic :='0';
 signal reset : std_logic := '1' ;
 signal SI : std_logic := '0'; --scan chain input (serial input used to set all weights and bias values in network for testing)
 signal SE : std_logic := '0'; --
-signal u : std_logic_vector(N*(Qm+Qn+1) downto 0) := (others => '0');        
+signal u : std_logic_vector(N*(Qm+Qn+1)-1 downto 0) := (others => '0');        
 
 --Outputs
-signal yhat : std_logic_vector(M*(Qm+Qn+1) downto 0) := (others => '0');
+signal yhat : std_logic_vector(M*(Qm+Qn+1)-1 downto 0) := (others => '0');
 
 --Clock period defs
 constant clk_period : time := 1us;

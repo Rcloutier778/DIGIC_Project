@@ -9,7 +9,7 @@ d/home/rxc1028/digicdesign/Lab7
 !i10e 25
 !i10f 100
 Efast_sigmoid
-Z0 w1543257529
+Z0 w1543690306
 Z1 DPx4 ieee 11 numeric_std 0 22 WES[o8HS0jHV[MIXQk2Ha1
 Z2 DPx3 std 6 textio 0 22 Y8d?=bLj9m4jiPLbo;>GT0
 Z3 DPx4 ieee 14 std_logic_1164 0 22 1bm?@Gd;P>[>_lN8Do9gP3
@@ -19,79 +19,79 @@ Z6 F/home/rxc1028/digicdesign/project/fast_sigmoid.vhd
 l0
 L8
 V:iBiKli17`BzcF6^FLU2<0
+!s100 3C:XhGd;_HAYM1N0Ao3o:2
 Z7 OL;C;10.2c_6;57
 32
-Z8 !s110 1543257531
-Z9 !s108 1543257531.399507
+Z8 !s110 1543690308
+!i10b 1
+Z9 !s108 1543690308.846384
 Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-novopt|/home/rxc1028/digicdesign/project/fast_sigmoid.vhd|
 Z11 !s107 /home/rxc1028/digicdesign/project/fast_sigmoid.vhd|
+!i111 1
 Z12 o-work work -2002 -explicit
 Z13 tExplicit 1 CreateSource 1
-!s100 3C:XhGd;_HAYM1N0Ao3o:2
-!i10b 1
-!i111 1
 Abeh
 R1
 R2
 R3
-DEx4 work 12 fast_sigmoid 0 22 :iBiKli17`BzcF6^FLU2<0
+Z14 DEx4 work 12 fast_sigmoid 0 22 :iBiKli17`BzcF6^FLU2<0
 l20
 L16
-Vmz;AF6GOF@JN??=UgC`zN1
+VG[3HT?nYbL7PfSJ]Pc:D;0
+!s100 l4_3ilm9KkdizgYG4UR@81
 R7
 32
 R8
+!i10b 1
 R9
 R10
 R11
+!i111 1
 R12
 R13
-!s100 ?`kXb4YjG`]T6REK0?`4T2
-!i10b 1
-!i111 1
 Emlp_model
-Z14 w1543257906
+Z15 w1543531772
 R1
 R2
 R3
 R4
-Z15 8/home/rxc1028/digicdesign/project/mlp_model.vhd
-Z16 F/home/rxc1028/digicdesign/project/mlp_model.vhd
+Z16 8/home/rxc1028/digicdesign/project/mlp_model.vhd
+Z17 F/home/rxc1028/digicdesign/project/mlp_model.vhd
 l0
 L7
-Vk^0oN0F]0L]bV]O=N3`9D1
-!s100 TTDjl[z0NO08zCEUdHQFS1
+V?SGm>Wnn1hROUXzIT=cCc0
 R7
 32
-Z17 !s110 1543257909
-!i10b 1
-Z18 !s108 1543257908.957950
-Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-novopt|/home/rxc1028/digicdesign/project/mlp_model.vhd|
-Z20 !s107 /home/rxc1028/digicdesign/project/mlp_model.vhd|
-!i111 1
+Z18 !s110 1543533141
+Z19 !s108 1543533141.738608
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|-novopt|/home/rxc1028/digicdesign/project/mlp_model.vhd|
+Z21 !s107 /home/rxc1028/digicdesign/project/mlp_model.vhd|
 R12
 R13
+!s100 6gF`:2KNj2h;DWmj98f2c1
+!i10b 1
+!i111 1
 Abeh
 R1
 R2
 R3
-Z21 DEx4 work 9 mlp_model 0 22 k^0oN0F]0L]bV]O=N3`9D1
+DEx4 work 9 mlp_model 0 22 ?SGm>Wnn1hROUXzIT=cCc0
 l42
 L24
 VecEYOO<4aI>>Y_DQ_aEYi0
-!s100 o7Le0;_]4]2f3ko_iDAVQ1
 R7
 32
-R17
-!i10b 1
 R18
 R19
 R20
-!i111 1
+R21
 R12
 R13
+!s100 o7Le0;_]4]2f3ko_iDAVQ1
+!i10b 1
+!i111 1
 Etestbench
-Z22 w1543256944
+Z22 w1543531891
 Z23 DPx4 ieee 16 std_logic_textio 0 22 E=LR>a2bb_I?VV>QDdAdh3
 R1
 R2
@@ -104,8 +104,8 @@ L7
 VMCAHk7;JoBPX8A=VgXLN]0
 R7
 32
-Z26 !s110 1543257540
-Z27 !s108 1543257540.594845
+Z26 !s110 1543533142
+Z27 !s108 1543533142.757374
 Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|-novopt|/home/rxc1028/digicdesign/project/testbench.vhd|
 Z29 !s107 /home/rxc1028/digicdesign/project/testbench.vhd|
 R12
@@ -121,7 +121,7 @@ R3
 DEx4 work 9 testbench 0 22 MCAHk7;JoBPX8A=VgXLN]0
 l51
 L10
-VbEO>;ciL`I]Hzz9o?Gk_h1
+VgFTY8fDkCI?YH85oz@ikz1
 R7
 32
 R26
@@ -130,6 +130,6 @@ R28
 R29
 R12
 R13
-!s100 R0Io1fzARKDHm>NkVjYmi1
+!s100 [e:cL]NW^nRDTXj]aE83m3
 !i10b 1
 !i111 1

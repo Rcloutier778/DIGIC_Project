@@ -16,8 +16,8 @@ entity mlp_model is
         reset : in std_logic;
         SI : in std_logic; --scan chain input (serial input used to set all weights and bias values in network for testing)
         SE : in std_logic; --
-        u : in std_logic_vector(N*(Qm+Qn+1) downto 0);
-        yhat : out std_logic_vector(M*(Qm+Qn+1) downto 0));
+        u : in std_logic_vector(N*(Qm+Qn+1)-1 downto 0);
+        yhat : out std_logic_vector(M*(Qm+Qn+1)-1 downto 0));
 
 end mlp_model;
 

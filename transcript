@@ -1,0 +1,288 @@
+# //  Questa Sim-64
+# //  Version 10.2c_6 linux_x86_64 Dec 17 2013
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading project project
+vsim testbench
+# vsim testbench 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.testbench(beh)
+# Loading work.mlp_model(beh)
+# Loading work.fast_sigmoid(beh)
+# ** Fatal: (vsim-3420) Array lengths do not match. Left is 7 (6 downto 0). Right is 8 (0 to 7).
+#    Time: 0 ps  Iteration: 0  Process: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX:line__21 File: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd
+# FATAL ERROR while loading design
+# Error loading design
+vsim testbench
+# vsim testbench 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.testbench(beh)
+# Loading work.mlp_model(beh)
+# Loading work.fast_sigmoid(beh)
+# ** Fatal: (vsim-3420) Array lengths do not match. Left is 7 (6 downto 0). Right is 8 (0 to 7).
+#    Time: 0 ps  Iteration: 0  Process: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX:line__21 File: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd
+# FATAL ERROR while loading design
+# Error loading design
+# Compile of fast_sigmoid.vhd was successful with warnings.
+vsim testbench
+# vsim testbench 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.testbench(beh)
+# Loading work.mlp_model(beh)
+# Loading work.fast_sigmoid(beh)
+# ** Fatal: (vsim-3471) Slice range (8 downto 5) does not belong to the prefix index range (7 downto 0).
+#    Time: 0 ps  Iteration: 0  Process: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX:line__21 File: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd
+# FATAL ERROR while loading design
+# Error loading design
+# Compile of fast_sigmoid.vhd was successful with warnings.
+vsim testbench
+# vsim testbench 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.testbench(beh)
+# Loading work.mlp_model(beh)
+# Loading work.fast_sigmoid(beh)
+# ** Fatal: (vsim-3471) Slice range (8 downto 5) does not belong to the prefix index range (7 downto 0).
+#    Time: 0 ps  Iteration: 0  Process: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX:line__21 File: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd
+# FATAL ERROR while loading design
+# Error loading design
+# Compile of fast_sigmoid.vhd was successful with warnings.
+vsim testbench
+# vsim testbench 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.testbench(beh)
+# Loading work.mlp_model(beh)
+# Loading work.fast_sigmoid(beh)
+# ** Fatal: (vsim-3471) Slice range (8 downto 5) does not belong to the prefix index range (7 downto 0).
+#    Time: 0 ps  Iteration: 0  Process: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX:line__21 File: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd
+# FATAL ERROR while loading design
+# Error loading design
+# Compile of fast_sigmoid.vhd was successful with warnings.
+# Compile of fast_sigmoid.vhd was successful with warnings.
+vsim testbench
+# vsim testbench 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.testbench(beh)
+# Loading work.mlp_model(beh)
+# Loading work.fast_sigmoid(beh)
+# ** Fatal: (vsim-3471) Slice range (8 downto 5) does not belong to the prefix index range (7 downto 0).
+#    Time: 0 ps  Iteration: 0  Process: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX:line__21 File: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd
+# FATAL ERROR while loading design
+# Error loading design
+# Compile of fast_sigmoid.vhd failed with 2 errors.
+# Compile of fast_sigmoid.vhd was successful with warnings.
+vsim testbench
+# vsim testbench 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.testbench(beh)
+# Loading work.mlp_model(beh)
+# Loading work.fast_sigmoid(beh)
+# ** Fatal: (vsim-3471) Slice range (8 downto 5) does not belong to the prefix index range (7 downto 0).
+#    Time: 0 ps  Iteration: 0  Process: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX:line__21 File: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd
+# FATAL ERROR while loading design
+# Error loading design
+# Compile of fast_sigmoid.vhd was successful with warnings.
+vsim testbench
+# vsim testbench 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.testbench(beh)
+# Loading work.mlp_model(beh)
+# Loading work.fast_sigmoid(beh)
+# ** Fatal: (vsim-3471) Slice range (8 downto 5) does not belong to the prefix index range (7 downto 0).
+#    Time: 0 ps  Iteration: 0  Process: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX:line__21 File: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd
+# FATAL ERROR while loading design
+# Error loading design
+# Compile of fast_sigmoid.vhd was successful with warnings.
+vsim testbench
+# vsim testbench 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.testbench(beh)
+# Loading work.mlp_model(beh)
+# Loading work.fast_sigmoid(beh)
+# ** Fatal: (vsim-3420) Array lengths do not match. Left is 9 (8 downto 0). Right is 8 (0 to 7).
+#    Time: 0 ps  Iteration: 0  Process: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX:line__21 File: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd
+# FATAL ERROR while loading design
+# Error loading design
+# Compile of fast_sigmoid.vhd was successful with warnings.
+vsim testbench
+# vsim testbench 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.testbench(beh)
+# Loading work.mlp_model(beh)
+# Loading work.fast_sigmoid(beh)
+# ** Fatal: (vsim-3734) Index value 4 is out of range 3 downto 0.
+#    Time: 0 ps  Iteration: 0  Process: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX:line__21 File: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd
+# FATAL ERROR while loading design
+# Error loading design
+# Compile of fast_sigmoid.vhd was successful with warnings.
+vsim testbench
+# vsim testbench 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.testbench(beh)
+# Loading work.mlp_model(beh)
+# Loading work.fast_sigmoid(beh)
+# ** Fatal: (vsim-3734) Index value 4 is out of range 3 downto 0.
+#    Time: 0 ps  Iteration: 0  Process: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX:line__21 File: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd
+# FATAL ERROR while loading design
+# Error loading design
+# Compile of fast_sigmoid.vhd was successful with warnings.
+vsim testbench
+# vsim testbench 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.testbench(beh)
+# Loading work.mlp_model(beh)
+# Loading work.fast_sigmoid(beh)
+# ** Fatal: (vsim-3420) Array lengths do not match. Left is 3 (2 downto 0). Right is 8 (0 to 7).
+#    Time: 0 ps  Iteration: 0  Process: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX:line__21 File: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd
+# FATAL ERROR while loading design
+# Error loading design
+
+vsim testbench
+# vsim testbench 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.testbench(beh)
+# Loading work.mlp_model(beh)
+# Loading work.fast_sigmoid(beh)
+# ** Fatal: (vsim-3420) Array lengths do not match. Left is 3 (2 downto 0). Right is 8 (0 to 7).
+#    Time: 0 ps  Iteration: 0  Process: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX:line__21 File: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd
+# FATAL ERROR while loading design
+# Error loading design
+# Compile of fast_sigmoid.vhd was successful with warnings.
+vsim testbench
+# vsim testbench 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.testbench(beh)
+# Loading work.mlp_model(beh)
+# Loading work.fast_sigmoid(beh)
+# ** Fatal: (vsim-3734) Index value 4 is out of range 3 downto 0.
+#    Time: 0 ps  Iteration: 0  Process: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX:line__21 File: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd
+# FATAL ERROR while loading design
+# Error loading design
+vsim testbench
+# vsim testbench 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.testbench(beh)
+# Loading work.mlp_model(beh)
+# Loading work.fast_sigmoid(beh)
+# ** Fatal: (vsim-3734) Index value 4 is out of range 3 downto 0.
+#    Time: 0 ps  Iteration: 0  Process: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX:line__21 File: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd
+# FATAL ERROR while loading design
+# Error loading design
+# Compile of fast_sigmoid.vhd was successful with warnings.
+vsim testbench
+# vsim testbench 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.testbench(beh)
+# Loading work.mlp_model(beh)
+# Loading work.fast_sigmoid(beh)
+add wave -position insertpoint  \
+sim/:testbench:Qm \
+sim/:testbench:Qn \
+sim/:testbench:N \
+sim/:testbench:H \
+sim/:testbench:M \
+sim/:testbench:clk \
+sim/:testbench:reset \
+sim/:testbench:SI \
+sim/:testbench:SE \
+sim/:testbench:u \
+sim/:testbench:yhat \
+sim/:testbench:file_v \
+sim/:testbench:clk_period
+# (vsim-4027) Logging is not supported for this item: :testbench:file_v 
+run
+# ** Error: (vsim-7) Failed to open VHDL file "W.dat" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: :testbench
+# ** Fatal: (vsim-7) Failed to open VHDL file "W.dat" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Process: :testbench:stim_proc File: /home/rxc1028/digicdesign/project/testbench.vhd
+# Fatal error in Process stim_proc at /home/rxc1028/digicdesign/project/testbench.vhd line 87
+# 
+# HDL call sequence:
+# Stopped at /home/rxc1028/digicdesign/project/testbench.vhd 87 Process stim_proc
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /home/rxc1028/digicdesign/project/testbench.vhd 87 Process stim_proc
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /home/rxc1028/digicdesign/project/testbench.vhd 87 Process stim_proc
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /home/rxc1028/digicdesign/project/testbench.vhd 87 Process stim_proc
+# 
