@@ -44,7 +44,7 @@ signal u : std_logic_vector(N*(Qm+Qn+1)-1 downto 0) := (others => '0');
 signal yhat : std_logic_vector(M*(Qm+Qn+1)-1 downto 0) := (others => '0');
 
 --Clock period defs
-constant clk_period : time := 1us;
+constant clk_period : time := 10ns;
 
 
 
@@ -74,14 +74,14 @@ end process;
 stim_proc: process
     variable v_line : line;
     variable v_std : std_logic_vector(Qm+Qn downto 0);
-    type Wtype is array (0 to N+H+1+M, 0 to N+H+1+M) of std_logic_vector(Qm+Qn downto 0); --0,1, ... N,N+1, ... N+H+1
+    type Wtype is array (0 to N+H+M, 0 to N+H+M) of std_logic_vector(Qm+Qn downto 0); --0,1, ... N,N+1, ... N+H+1
     variable W : Wtype;    
     variable row : integer :=0;
     variable col : integer :=0;
     variable index : integer :=0;
 begin
     reset <= '0';
-    file_open(file_v, "W.dat", read_mode);
+    file_open(file_v, "matlab/W.dat", read_mode);
     row :=0;
     col :=0;
     while not endfile(file_v) loop
@@ -89,10 +89,10 @@ begin
         read(v_line, v_std);
         W(row,col) := v_std;
         col := col + 1;
-        if col > N+H+1+M then
+        if col > N+H+M then
             col := 0;
             row := row + 1;
-            if row > N+H+1+M then
+            if row > N+H+M then
                 exit;
             end if;
         end if;
@@ -102,9 +102,10 @@ begin
     SI <= W(0,0)(0);
     wait for clk_period * 2;
     SE <= '1';
-    for row in 0 to N+H+1+M loop
-        for col in 0 to N+H+1+M loop
+    for row in 0 to N+H+M loop
+        for col in 0 to N+H+M loop
             for index in 0 to Qm+Qn loop
+                --report(string(std_logic'image(W(row,col)(index))));
                 SI <= W(row, col)(index);
                 wait for clk_period; 
             end loop;

@@ -1,4 +1,13 @@
-/home/rxc1028/digicdesign/project/fast_sigmoid.vhd {2 {vcom -work work -2002 -explicit -novopt /home/rxc1028/digicdesign/project/fast_sigmoid.vhd
+/home/rxc1028/digicdesign/project/mlp_model.vhd {1 {vcom -work work -2002 -explicit -novopt /home/rxc1028/digicdesign/project/mlp_model.vhd
+QuestaSim-64 vcom 10.2c_6 Compiler 2013.12 Dec 17 2013
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity mlp_model
+-- Compiling architecture beh of mlp_model
+
+} {} {}} /home/rxc1028/digicdesign/project/fast_sigmoid.vhd {2 {vcom -work work -2002 -explicit -novopt /home/rxc1028/digicdesign/project/fast_sigmoid.vhd
 QuestaSim-64 vcom 10.2c_6 Compiler 2013.12 Dec 17 2013
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -10,14 +19,5 @@ QuestaSim-64 vcom 10.2c_6 Compiler 2013.12 Dec 17 2013
 ** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(31): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
 ** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(37): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
 ** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(77): (vcom-1073) Non-locally static choice (association #1, choice #1) is allowed only if it is the only choice of the only association.
-
-} {} {}} /home/rxc1028/digicdesign/project/mlp_model.vhd {1 {vcom -work work -2002 -explicit -novopt /home/rxc1028/digicdesign/project/mlp_model.vhd
-QuestaSim-64 vcom 10.2c_6 Compiler 2013.12 Dec 17 2013
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity mlp_model
--- Compiling architecture beh of mlp_model
 
 } {} {}}
