@@ -101,14 +101,10 @@ begin
                     -- (W^L)*x^(l-L) is a dot product, should produce a single value
                     --f(s) = 1/(1+e^(-s)) --sigmoid
                     --fast sigmoid: f(s) = s/(1+abs(s))
-                    --TODO put all real into Qm.n format for performance?
                     -- l is the layer
-                    
-                    --activation function
-                    --u has 1 signed bit, m integer bits, n decimal bits
-                    for a in 0 to N+1 loop
+                    for a in 0 to N-1 loop
                         --All inputs and the bias of H are u, rest use sigmoid
-                        x(a) <= std_logic_vector(signed(u(((N-a)*(Qm+Qn)) downto ((N-1-a)*(Qm+Qn)))));
+                        x(a) <= std_logic_vector(signed(u(((a+1)*(Qm+Qn+1))-1 downto (a*(Qm+Qn+1)))));
                     end loop;
                     
                     --Hidden layer

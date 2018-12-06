@@ -46,7 +46,10 @@ signal yhat : std_logic_vector(M*(Qm+Qn+1)-1 downto 0) := (others => '0');
 --Clock period defs
 constant clk_period : time := 10ns;
 
+signal wLoaded : std_logic :='0';
 
+type Wtype is array (0 to N+H+M, 0 to N+H+M) of std_logic_vector(Qm+Qn downto 0); --0,1, ... N,N+1, ... N+H+1
+signal W : Wtype;  
 
 begin
     uut: mlp_model generic map(
@@ -72,47 +75,63 @@ begin
 end process;
 
 stim_proc: process
+    variable row : integer :=0;
+    variable col : integer :=0;
+    variable index : integer :=0;
+    begin
+    reset <= '0';
+    wait for clk_period * 10;
+    reset <= '1';
+    if wLoaded = '1' then
+        SI <= W(0,0)(0);
+        wait for clk_period * 2;
+        SE <= '1';
+        for row in 0 to N+H+M loop
+            for col in 0 to N+H+M loop
+                for index in 0 to Qm+Qn loop
+                    --report(string(std_logic'image(W(row,col)(index))));
+                    SI <= W(row, col)(index);
+                    wait for clk_period; 
+                end loop;
+            end loop;
+        end loop;
+    end if;
+
+end process;
+  
+
+weight_proc : process
     variable v_line : line;
     variable v_std : std_logic_vector(Qm+Qn downto 0);
-    type Wtype is array (0 to N+H+M, 0 to N+H+M) of std_logic_vector(Qm+Qn downto 0); --0,1, ... N,N+1, ... N+H+1
-    variable W : Wtype;    
     variable row : integer :=0;
     variable col : integer :=0;
     variable index : integer :=0;
 begin
-    reset <= '0';
-    file_open(file_v, "matlab/W.dat", read_mode);
-    row :=0;
-    col :=0;
-    while not endfile(file_v) loop
-        readline(file_v, v_line);
-        read(v_line, v_std);
-        W(row,col) := v_std;
-        col := col + 1;
-        if col > N+H+M then
-            col := 0;
-            row := row + 1;
-            if row > N+H+M then
-                exit;
+    if wLoaded = '0' then 
+        file_open(file_v, "matlab/W.dat", read_mode);
+        row :=0;
+        col :=0;
+        while not endfile(file_v) loop
+            readline(file_v, v_line);
+            read(v_line, v_std);
+            W(row,col) <= v_std;
+            col := col + 1;
+            if col > N+H+M then
+                col := 0;
+                row := row + 1;
+                if row > N+H+M then
+                    exit;
+                end if;
             end if;
-        end if;
-    end loop;
-    wait for clk_period * 10;
-    reset <= '1';
-    SI <= W(0,0)(0);
-    wait for clk_period * 2;
-    SE <= '1';
-    for row in 0 to N+H+M loop
-        for col in 0 to N+H+M loop
-            for index in 0 to Qm+Qn loop
-                --report(string(std_logic'image(W(row,col)(index))));
-                SI <= W(row, col)(index);
-                wait for clk_period; 
-            end loop;
         end loop;
-    end loop;
-    
-
+        file_close(file_v);
+        wait for clk_period *2;
+        wLoaded <='1';
+        wait;
+        
+    end if;
 end process;
-  
+
+
+
 end;
