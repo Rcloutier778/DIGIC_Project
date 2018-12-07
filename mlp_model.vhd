@@ -28,9 +28,9 @@ architecture beh of mlp_model is
     --Weights
     type Wtype is array (0 to N+H+1+M, 0 to N+H+1+M) of std_logic_vector(Qm+Qn downto 0); --0,1, ... N,N+1, ... N+H+1
     signal W : Wtype;    
-    type stype is array (0 to N+H+1) of std_logic_vector(Qm+Qn downto 0);-- := (others=> (others => '0'));
+    type stype is array (0 to N+H+2) of std_logic_vector(Qm+Qn downto 0);-- := (others=> (others => '0'));
     signal s : stype := (others => (others=>'0'));
-    type fstype is array (0 to N+H+1) of std_logic_vector(Qm+Qn downto 0);
+    type fstype is array (0 to N+H+2) of std_logic_vector(Qm+Qn downto 0);
     signal fs : fstype := (others => (others=> '0'));
     
     component fast_sigmoid
@@ -52,6 +52,7 @@ begin
     variable a : integer; --loop 
     variable b : integer;
     variable tempS : signed(Qm+Qn downto 0) := (others=>'0');
+    variable tempSS : signed(2*(Qm+Qn+1)-1 downto 0) := (others=>'0');
     variable W_Index_Counter : integer :=0;
     variable W_Node_Counter : integer :=0;
     variable W_Node_Counter2 : integer :=0;
@@ -114,10 +115,13 @@ begin
                         for b in 0 to N loop  --For weights 0 to N in the node 
                             --W(Node weight row in current layer, Node from previous layer acting on it)
                             --   == Weight of node in previous layer acting on node on current layer
-                            tempS := tempS + (signed(W(a,b)) * signed(x(b)));
+                            tempSS := signed(W(a,b)) * signed(x(b));
+                            --report(integer'Image(to_integer(signed(tempSS))));
+                            tempS := tempS + tempSS(2*(Qn+Qm)-1 downto Qm+Qn);
+                            
+                        end loop;
                         s(a) <= std_logic_vector(tempS);
                         x(a) <= fs(a);
-                        end loop;
                     end loop;
                     
                     --Output layer
@@ -127,11 +131,13 @@ begin
                         for b in N+1 to N+1+H loop  --For weights 0 to N in the node 
                             --W(Node weight row in current layer, Node from previous layer acting on it)
                             --   == Weight of node in previous layer acting on node on current layer
-                            tempS := tempS + (signed(W(a,b)) * signed(x(b)));
+                            tempSS := signed(W(a,b)) * signed(x(b));
+                            tempS := tempS + tempSS(2*(Qn+Qm)-1 downto Qm+Qn);
+
+                        end loop;
                         s(a) <= std_logic_vector(tempS);
                         x(a) <= fs(a);
-                        yhat((a-(N+H+2))*(Qm+Qn) downto ( (a-(N+H+1)) *(Qm+Qn) )   ) <= x(a);
-                        end loop;
+                        yhat((a-(N+H+1))*(Qm+Qn) downto ( (a-(N+H+2)) *(Qm+Qn) )   ) <= x(a);
                     end loop;
                 end if;
             end if;
