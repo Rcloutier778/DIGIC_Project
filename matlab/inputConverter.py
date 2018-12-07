@@ -5,6 +5,7 @@ Qm=4
 u=""
 with open(filestr+'.txt','r') as f:
     lines = f.readlines()
+    print(len(lines))
     for line in lines:
         for dig in line.split("\t"):
             if int(dig) > 0:
@@ -12,7 +13,10 @@ with open(filestr+'.txt','r') as f:
             else:
                 print("WARNING: An input was negative. I don't account for this")
 
-            u += "{0:b}".format(int(dig))
+            tempu = "{0:b}".format(int(dig))
+            if len(tempu) < 8:
+                tempu = "0"*(8-len(tempu)) + tempu
+            u += tempu
             u += "\n"
 u = u[:-2]
 
