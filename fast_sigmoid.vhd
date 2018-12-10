@@ -17,6 +17,7 @@ architecture beh of fast_sigmoid is
 signal abs_s_int : unsigned(Qm downto 0);
 signal abs_s : unsigned(Qm+Qn downto 0);
 signal tfs : unsigned(Qn+Qm downto 0) := (others=>'0');
+signal tempSS : unsigned(2*(Qm+Qn+1)-1 downto 0) := (others=>'0');
 begin
     process (s)
         
@@ -76,7 +77,7 @@ begin
     constant case3_add_int : std_logic_vector(Qm downto 0) := (others => '0');
     constant case3_add_dec : std_logic_vector(Qn-1 downto 0) := (Qn-1 => '1', others=>'0');
     constant case3_add : unsigned(Qn+Qm downto 0) := unsigned(case3_add_int & case3_add_dec);
- 
+	
     
     begin
         abs_s <= unsigned(std_logic_vector(abs(signed(s(Qn+Qm downto 0)))));
@@ -92,13 +93,16 @@ begin
         elsif (unsigned(abs_s) >= case1) and (unsigned(abs_s) >= 5) then
             --2.375 <= |X| < 5
             --Y=0.03125 |X| + 0.84375
-            tfs <= (case1_mult * abs_s) + case1_add;
+            tempSS <= case1_mult * abs_s;
+			tfs <= case1_add + tempSS(2*(Qn+Qm)-1 downto Qm+Qn);
         elsif abs_s >= case3 and (abs_s < case2) then
             --1 <= |X| < 2.375
-            tfs <= (case2_mult * abs_s) + case2_add;
+            tempSS <= case2_mult * abs_s;
+			tfs <= case2_add + tempSS(2*(Qn+Qm)-1 downto Qm+Qn);
         elsif abs_s >= case4 and abs_s < case3 then
             --0 <= |X| < 1
-            tfs <= (case3_mult * abs_s) + case3_add;
+			tempSS <= case3_mult * abs_s;
+			tfs <= case3_add + tempSS(2*(Qn+Qm)-1 downto Qm+Qn);
         end if;
         if s(Qn+Qm) = '1' then
             fs <= std_logic_vector(signed(1-tfs(Qm+Qn downto 0)));
