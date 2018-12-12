@@ -1,5 +1,6 @@
 clear all;
 
+rng(2000);
 % Constants
 %%% ONLY MODIFIY THESE %%%
 f = @(s) 1./(1+exp(-s));
@@ -84,22 +85,50 @@ for i = 1:1+nu+nh+ny
         else 
             pos = 0;
         end
-        d2b_num = fix(rem(fix(a)*pow2(-(Qn-1):0),2));
-        d2b_dec = fix(rem( rem(a,1)*pow2(1:Qm),2));
+        d2b_num = fix(rem(fix(a)*pow2(-(Qm-1):0),2));
+        d2b_dec = fix(rem( rem(a,1)*pow2(1:Qn),2));
         if (pos == 1)
-            for x = 1:Qn
+            %Invert int
+            for x = 1:Qm
                 if (d2b_num(x) == 0)
                     d2b_num(x) = 1;
                 else 
                     d2b_num(x) = 0;
                 end
-                
+            end
+            %Invert dec
+            for x = 1:Qn
                 if (d2b_dec(x) == 0)
                     d2b_dec(x) = 1;
                 else
                     d2b_dec(x) = 0;
                 end
             end
+            %Add 1 dec
+            carry=1;
+            for x = Qn:-1:1
+                if carry==1
+                    if d2b_dec(x) ==0
+                        d2b_dec(x) = 1;
+                        carry=0;
+                    else
+                        d2b_dec(x) = 0;
+                    end
+                end
+            end
+            if carry==1
+                for x = Qm:-1:1
+                    if carry==1
+                        if d2b_num(x) ==0
+                            d2b_num(x) = 1;
+                            carry=0;
+                        else
+                            d2b_num(x) = 0;
+                        end
+                    end
+                end
+            end
+            
         end
         s1 = num2str(pos);
         for QnnCounter = 1:length(d2b_num)
@@ -117,7 +146,7 @@ for i = 1:1+nu+nh+ny
 end
 
 % Write the weight matrix
-dlmwrite('old_W.dat',OldW);
+dlmwrite('old_W.csv',OldW);
 fileID = fopen('W.dat','wt');
 for (total = 1:31*31)
     fprintf(fileID, '%s\n', FinalW{total});
