@@ -1,13 +1,14 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-
+library adk;
+use adk.adk_components.all;
 --N, H, M
 
 entity mlp_model is
     generic (
-        N : integer :=1; -- # inputs
-        H : integer :=1; -- # hidden
+        N : integer :=9; -- # inputs
+        H : integer :=20; -- # hidden
         M : integer :=1; -- # outputs
         Qm : integer :=4; -- for Qm.m # of integer bits
         Qn : integer :=4); --for Qm.n # of decimal bits.  Look at part 4 for better explanation
@@ -53,9 +54,9 @@ begin
     variable b : integer;
     variable tempS : signed(Qm+Qn downto 0) := (others=>'0');
     variable tempSS : signed(2*(Qm+Qn+1)-1 downto 0) := (others=>'0');
-    variable W_Index_Counter : integer :=0;
-    variable W_Node_Counter : integer :=0;
-    variable W_Node_Counter2 : integer :=0;
+    variable W_Index_Counter : integer range 0 to Qm+Qn :=0;
+    variable W_Node_Counter : integer range 0 to N+H+M :=0;
+    variable W_Node_Counter2 : integer range 0 to N+H+M :=0;
     begin
         if (reset = '0') then
             --Reset is just power input 
