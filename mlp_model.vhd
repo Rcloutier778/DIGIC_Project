@@ -6,11 +6,11 @@ use ieee.numeric_std.all;
 
 entity mlp_model is
     generic (
-        N : integer :=0; -- # inputs
-        H : integer :=0; -- # hidden
-        M : integer :=0; -- # outputs
-        Qm : integer :=0; -- for Qm.m # of integer bits
-        Qn : integer :=0); --for Qm.n # of decimal bits.  Look at part 4 for better explanation
+        N : integer :=1; -- # inputs
+        H : integer :=1; -- # hidden
+        M : integer :=1; -- # outputs
+        Qm : integer :=4; -- for Qm.m # of integer bits
+        Qn : integer :=4); --for Qm.n # of decimal bits.  Look at part 4 for better explanation
     port (
         clk : in std_logic;
         reset : in std_logic;
