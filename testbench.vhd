@@ -83,6 +83,7 @@ stim_proc: process
     reset <= '0';
     wait for clk_period * 10;
     reset <= '1';
+	wait for clk_period;
     if wLoaded = '1' then
         SI <= W(0,0)(0);
         wait for clk_period * 2;
@@ -92,7 +93,7 @@ stim_proc: process
                 for index in 0 to Qm+Qn loop
                     --report(string(std_logic'image(W(row,col)(index))));
                     SI <= W(row, col)(index);
-                    wait for clk_period*2; 
+                    wait for clk_period; 
                 end loop;
             end loop;
         end loop;

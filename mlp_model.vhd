@@ -26,7 +26,7 @@ architecture beh of mlp_model is
     type xtype is array (0 to N+H+1+M)  of std_logic_vector(Qm+Qn downto 0);
     signal x : xtype := (others => (others => '0'));
     --Weights
-    type Wtype is array (0 to N+H+1+M, 0 to N+H+1+M) of std_logic_vector(Qm+Qn downto 0); --0,1, ... N,N+1, ... N+H+1
+    type Wtype is array (0 to N+H+M, 0 to N+H+M) of std_logic_vector(Qm+Qn downto 0); --0,1, ... N,N+1, ... N+H+1
     signal W : Wtype;    
     type stype is array (0 to N+H+2) of std_logic_vector(Qm+Qn downto 0);-- := (others=> (others => '0'));
     signal s : stype := (others => (others=>'0'));
@@ -60,8 +60,8 @@ begin
         if (reset = '0') then
             --Reset is just power input 
             x <= (others => (others => '0'));
-            for a in 0 to N+H+1+M loop
-                for b in 0 to N+H+1+M loop
+            for a in 0 to N+H+M loop
+                for b in 0 to N+H+M loop
                     W(a,b) <= (others => '0');
                 end loop;
             end loop;
@@ -77,13 +77,13 @@ begin
                 --Rising clock edge
                 if (SE = '1') then
                     --Read in weights from SI, 1 bit at a time
-                    if (W_Node_Counter <= N+H+1+M) then
+                    if (W_Node_Counter <= N+H+M) then
                         --Check to make sure it doesn't overrun index bounds
                         W(W_Node_Counter,W_Node_Counter2)(W_Index_Counter) <= SI;
                         if W_Index_Counter = Qm+Qn then
                             W_Index_Counter := 0;
                             --If at end of Node, go to next node and start at 0
-                            if W_Node_Counter2 = N+H+1+M then
+                            if W_Node_Counter2 = N+H+M then
                                 W_Node_Counter := W_Node_Counter +1;
                                 W_Node_Counter2 := 0;
                             else
@@ -115,13 +115,13 @@ begin
                         for b in 0 to N loop  --For weights 0 to N in the node 
                             --W(Node weight row in current layer, Node from previous layer acting on it)
                             --   == Weight of node in previous layer acting on node on current layer
-                            tempSS := signed(W(a+N+1,b)) * signed(x(b));
+                            tempSS := signed(W(a+N,b)) * signed(x(b));
                             --report(integer'Image(to_integer(signed(tempSS))));
                             tempS := tempS + tempSS(2*(Qn+Qm)-1 downto Qm+Qn);
                             
                         end loop;
-                        s(a+N+1) <= std_logic_vector(tempS);
-                        x(a+N+1) <= fs(a+N+1);
+                        s(a+N) <= std_logic_vector(tempS);
+                        x(a+N) <= fs(a+N);
 						
 						-- if tempS < 0 then
 							-- x(a) <= (others => '0');
