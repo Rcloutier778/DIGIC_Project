@@ -1,13 +1,15 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+library adk;
+use adk.adk_components.all;
 --use ieee.std_logic_unsigned.all;
 --use ieee.std_logic_signed.all;
 
 
 entity fast_sigmoid is
-    generic(Qn : integer:=0;
-            Qm : integer:=0);
+    generic(Qn : integer:=4;
+            Qm : integer:=4);
     port(
         s : in std_logic_vector(Qn+Qm downto 0);
         fs : out std_logic_vector(Qn+Qm downto 0));

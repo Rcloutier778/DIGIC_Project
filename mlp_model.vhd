@@ -29,10 +29,8 @@ architecture beh of mlp_model is
     --Weights
     type Wtype is array (0 to N+H+M, 0 to N+H+M) of std_logic_vector(Qm+Qn downto 0); --0,1, ... N,N+1, ... N+H+1
     signal W : Wtype;    
-    type stype is array (0 to N+H+2) of std_logic_vector(Qm+Qn downto 0);-- := (others=> (others => '0'));
+    type stype is array (0 to N+H+1+M) of std_logic_vector(Qm+Qn downto 0);-- := (others=> (others => '0'));
     signal s : stype := (others => (others=>'0'));
-    type fstype is array (0 to N+H+2) of std_logic_vector(Qm+Qn downto 0);
-    signal fs : fstype := (others => (others=> '0'));
 	
     component fast_sigmoid
         generic( Qn : integer; Qm : integer);
@@ -43,10 +41,10 @@ architecture beh of mlp_model is
 begin
     
     GEN_FAST_SIGMOID:
-    for I in 1 to H generate
+    for I in 0 to H+M generate
         fast_sigmoidX : fast_sigmoid 
             generic map (Qn=>Qn, Qm=>Qm) 
-            port map (s=> s(I+N+1), fs => fs(I+N+1)) ;
+            port map (s=> s(I+N+1), fs => x(I+N+1)) ;
     end generate GEN_FAST_SIGMOID;
     
     process (clk, reset, u, SE)
@@ -67,7 +65,6 @@ begin
                 end loop;
             end loop;
             s <= (others => (others => '0'));
-            fs <= (others => (others => '0'));
             W_Index_Counter := 0;
             W_Node_Counter := 0;
             W_Node_Counter2 := 0;
@@ -85,8 +82,10 @@ begin
                             W_Index_Counter := 0;
                             --If at end of Node, go to next node and start at 0
                             if W_Node_Counter2 = N+H+M then
-                                W_Node_Counter := W_Node_Counter +1;
-                                W_Node_Counter2 := 0;
+                                if W_Node_Counter /= N+H+M then
+                                    W_Node_Counter := W_Node_Counter +1;
+                                    W_Node_Counter2 := 0;
+                                end if;
                             else
                                 W_Node_Counter2 := W_Node_Counter2 +1;
                             end if;
@@ -122,7 +121,6 @@ begin
                             
                         end loop;
                         s(a+N) <= std_logic_vector(tempS);
-                        x(a+N) <= fs(a+N);
 						
 						-- if tempS < 0 then
 							-- x(a) <= (others => '0');
