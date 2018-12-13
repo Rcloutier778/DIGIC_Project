@@ -1,8 +1,8 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-library adk;
-use adk.adk_components.all;
+--library adk;
+--use adk.adk_components.all;
 --use ieee.std_logic_unsigned.all;
 --use ieee.std_logic_signed.all;
 
@@ -78,7 +78,7 @@ constant buf : std_logic_vector(Qn downto 0) := (others => '0');
     constant case3_add : unsigned(Qn+Qm downto 0) := unsigned(case3_add_int & case3_add_dec);
     
     begin
-    process(s, abs_s, tfs, tempS) 
+    process(s) 
     begin
         abs_s <= unsigned(std_logic_vector(abs(signed(s(Qn+Qm downto 0)))));
         if (unsigned(abs_s) >= case1) then   
@@ -92,10 +92,12 @@ constant buf : std_logic_vector(Qn downto 0) := (others => '0');
 			tfs <= case1_add + tempS(2*(Qn+Qm)-1 downto Qm+Qn);
         elsif abs_s >= case3 and (abs_s < case2) then
             --1 <= |X| < 2.375
+			--Y=0.125 * |X| + 0.625
             tempS <= case2_mult * abs_s;
 			tfs <= case2_add + tempS(2*(Qn+Qm)-1 downto Qm+Qn);
         elsif abs_s >= case4 and abs_s < case3 then
             --0 <= |X| < 1
+			--Y=0.25 * |X| + 0.5
 			tempS <= case3_mult * abs_s;
 			tfs <= case3_add + tempS(2*(Qn+Qm)-1 downto Qm+Qn);
         end if;

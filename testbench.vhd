@@ -35,7 +35,7 @@ signal M : integer := 1;
 
 --Inputs
 signal clk : std_logic :='0';
-signal reset : std_logic := '1' ;
+signal reset : std_logic := '0' ;
 signal SI : std_logic := '0'; --scan chain input (serial input used to set all weights and bias values in network for testing)
 signal SE : std_logic := '0'; --
 signal u : std_logic_vector(N*(Qm+Qn+1)-1 downto 0) := (others => '0');        
