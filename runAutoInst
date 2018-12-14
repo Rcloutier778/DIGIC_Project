@@ -1,0 +1,4 @@
+python autoIntCreationScript.py
+chmod +x autoInstDOFILE
+ic -nod -dofile /home/rxc1028/digicdesign/project/autoInstDOFILE > zlog.txt
+vim zlog.txt

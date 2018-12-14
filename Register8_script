@@ -1,6 +1,6 @@
-set exclude_gates {PadInC PadOut}
 load_library /tools/mentor/adk/technology/leonardo/tsmc018_typ.syn
-read {mlp_model.vhd}
+read {fast_sigmoid.vhd mlp_model.vhd}
+ungroup -all -hier
 set sdf_write_flat_netlist TRUE
 optimize
 write -format verilog mlp_model.v
