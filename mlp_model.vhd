@@ -1,8 +1,8 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
---library adk;
---use adk.adk_components.all;
+library adk;
+use adk.adk_components.all;
 --N, H, M
 
 entity mlp_model is
@@ -50,7 +50,7 @@ architecture beh of mlp_model is
 	
 
     
-    process (clk)
+    process (clk, W, u, SE, SI, reset, x, s, fs)
     variable a : integer := 0; --loop 
     variable b : integer := 0;
     variable tempS : signed(Qm+Qn downto 0) := (others=>'0');
@@ -119,7 +119,7 @@ architecture beh of mlp_model is
                             --   == Weight of node in previous layer acting on node on current layer
                             tempSS := signed(W(a,b)) * signed(x(b));
                             --report(integer'Image(to_integer(signed(tempSS))));
-                            tempS := tempS + tempSS(2*(Qn+Qm)-1 downto Qm+Qn);
+                            tempS := tempS + tempSS( Qn+Qn+Qm downto Qn);
                             
                         end loop;
                         s(a) <= std_logic_vector(tempS);
@@ -138,7 +138,7 @@ architecture beh of mlp_model is
                         tempS := (others=>'0');
                         for b in N to N+H loop  --For each node in the hidden layer 
                             tempSS := signed(W(a,b)) * signed(x(b));
-                            tempS := tempS + tempSS(2*(Qn+Qm)-1 downto Qm+Qn);
+                            tempS := tempS + tempSS(Qn+Qn+Qm downto Qn);
                             
                         end loop;
                         s(a) <= std_logic_vector(tempS);

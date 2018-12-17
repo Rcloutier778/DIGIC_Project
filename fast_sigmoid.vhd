@@ -1,8 +1,8 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
---library adk;
---use adk.adk_components.all;
+library adk;
+use adk.adk_components.all;
 --use ieee.std_logic_unsigned.all;
 --use ieee.std_logic_signed.all;
 
@@ -76,7 +76,8 @@ constant buf : std_logic_vector(Qn downto 0) := (others => '0');
     constant case3_add_int : std_logic_vector(Qm downto 0) := (others => '0');
     constant case3_add_dec : std_logic_vector(Qn-1 downto 0) := (Qn-1 => '1', others=>'0');
     constant case3_add : unsigned(Qn+Qm downto 0) := unsigned(case3_add_int & case3_add_dec);
-    
+   
+    constant twocomp : unsigned(Qm+Qn downto 0) := (0 => '1', others =>'0');
     begin
     process(s) 
     begin
@@ -102,7 +103,7 @@ constant buf : std_logic_vector(Qn downto 0) := (others => '0');
 			tfs <= case3_add + tempS(2*(Qn+Qm)-1 downto Qm+Qn);
         end if;
         if s(Qn+Qm) = '1' then
-            fs <= std_logic_vector(signed(1-tfs(Qm+Qn downto 0)));
+            fs <= std_logic_vector(not(tfs)+twocomp);
         else
             fs <= std_logic_vector(tfs);
         end if;
