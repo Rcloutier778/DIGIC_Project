@@ -1,0 +1,66 @@
+/tools/mentor/leonardo/2008b/bin/Linux/spectrum -file Register8_script \
+-hierarchy_auto 
+-------------------------------------------------
+LeonardoSpectrum Level 3 - 2008b.3 (Release Production Release, compiled Dec  8 2008 at 13:18:31)
+Copyright 1990-2008 Mentor Graphics.  All rights reserved.
+Portions copyright 1991-2008 Compuware Corporation
+
+Checking Security ...
+Reading library file `/tools/mentor/adk/technology/leonardo/tsmc018_typ.syn`...
+Library version = v3.1 Release : Patch (a) : (Aug 26, 2005)
+Delays assume: Process=typical Temp=  0.0 C  Voltage=1.80 V  
+Info: setting encoding to auto
+-- Reading file /tools/mentor/leonardo/2008b/data/standard.vhd for unit standard
+-- Loading package standard into library std
+-- Reading vhdl file /home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd into library work
+-- Reading file /tools/mentor/leonardo/2008b/data/std_1164.vhd for unit std_logic_1164
+-- Loading package std_logic_1164 into library ieee
+-- Reading file /tools/mentor/leonardo/2008b/data/numeric_std.vhd for unit numeric_std
+-- Loading package NUMERIC_STD into library ieee
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd",line 5: Warning, adk_components is not declared in library adk.
+-- Loading entity mlp_model into library work
+-- Loading architecture beh of mlp_model into library work
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd",line 36: Warning, variable a is never used.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd",line 37: Warning, variable b is never used.
+-- Compiling root entity mlp_model(beh)
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd",line 28: Warning, initial value for x is ignored for synthesis.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd",line 31: Warning, initial value for W is ignored for synthesis.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd",line 32: Warning, initial value for EOF_W is ignored for synthesis.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd",line 38: Warning, initial value for tempS is ignored for synthesis.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd",line 39: Warning, initial value for tempSS is ignored for synthesis.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd",line 40: Warning, initial value for W_Index_Counter is ignored for synthesis.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd",line 41: Warning, initial value for W_Node_Counter is ignored for synthesis.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd",line 42: Warning, initial value for W_Node_Counter2 is ignored for synthesis.
+Info: The target technology was not selected, tsmc018_typ was automatically selected for you.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd", line 103:Info, 8 adders in series feeding nets 'nx78505' to 'nx78497', were balanced.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd", line 103:Info, 8 adders in series feeding nets 'nx78766' to 'nx78758', were balanced.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd", line 103:Info, 8 adders in series feeding nets 'nx79027' to 'nx79019', were balanced.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd", line 103:Info, 8 adders in series feeding nets 'nx79288' to 'nx79280', were balanced.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd", line 103:Info, 8 adders in series feeding nets 'nx79549' to 'nx79541', were balanced.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd", line 103:Info, 8 adders in series feeding nets 'nx79810' to 'nx79802', were balanced.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd", line 103:Info, 8 adders in series feeding nets 'nx80071' to 'nx80063', were balanced.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd", line 103:Info, 8 adders in series feeding nets 'nx80332' to 'nx80324', were balanced.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd", line 103:Info, 8 adders in series feeding nets 'nx80593' to 'nx80585', were balanced.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd", line 103:Info, 8 adders in series feeding nets 'nx80854' to 'nx80846', were balanced.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd", line 103:Info, 8 adders in series feeding nets 'nx81115' to 'nx81107', were balanced.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd", line 103:Info, 8 adders in series feeding nets 'nx81376' to 'nx81368', were balanced.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd", line 103:Info, 8 adders in series feeding nets 'nx81637' to 'nx81629', were balanced.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd", line 103:Info, 8 adders in series feeding nets 'nx81898' to 'nx81890', were balanced.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd", line 103:Info, 8 adders in series feeding nets 'nx82159' to 'nx82151', were balanced.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd", line 103:Info, 8 adders in series feeding nets 'nx82420' to 'nx82412', were balanced.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd", line 103:Info, 8 adders in series feeding nets 'nx82681' to 'nx82673', were balanced.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd", line 103:Info, 8 adders in series feeding nets 'nx82942' to 'nx82934', were balanced.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd", line 103:Info, 8 adders in series feeding nets 'nx83203' to 'nx83195', were balanced.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd", line 103:Info, 8 adders in series feeding nets 'nx83464' to 'nx83456', were balanced.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd", line 103:Info, 8 adders in series feeding nets 'nx83725' to 'nx83717', were balanced.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd", line 120:Info, 20 adders in series feeding nets 'nx84322' to 'nx84314', were balanced.
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd", line 61:Info, Inferred counter instance 'W_Index_Counter' of type 'counter_up_sclear_clock_clk_en_4'
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd", line 65:Info, Inferred counter instance 'W_Node_Counter2' of type 'counter_up_sclear_clock_clk_en_5'
+"/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd", line 69:Info, Inferred counter instance 'W_Node_Counter' of type 'counter_up_sclear_clock_clk_en_5'
+-- Optimizing netlist .work.mlp_model.beh
+-- Automatic IO buffer insertion...
+WARNING: cannot do IO mapping. Library has no plain input IO buffer
+Warning, View .work.mlp_model.beh needs partitioning, you may want to optimize this block in "auto dissolve" hierachy mode...
+Warning, View .work.mlp_model.beh needs partitioning, you may want to optimize this block in "auto dissolve" hierachy mode...
+optimize: interrupted
+

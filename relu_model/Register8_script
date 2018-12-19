@@ -1,0 +1,9 @@
+load_library /tools/mentor/adk/technology/leonardo/tsmc018_typ.syn
+read mlp_model.vhd
+ungroup -all -hier
+optimize -hierarchy=auto
+set sdf_write_flat_netlist TRUE
+optimize -hierarchy=auto
+write -format verilog mlp_model.v
+write -format vhdl mlp_model.vhdl
+write -format sdf mlp_model.sdf

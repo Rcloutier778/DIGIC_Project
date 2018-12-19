@@ -18,7 +18,7 @@ with open(filestr+'.txt','r') as f:
                 tempu = "0"*(8-len(tempu)) + tempu
             u += tempu
             u += "\n"
-u = u[:-2]
+u = u[:-1]
 
 with open('conv_'+filestr+'.txt','w+') as f:
     f.write(u)

@@ -1,0 +1,42 @@
+* Example circuit file for simulating PEX
+
+.INCLUDE "/home/rxc1028/digicdesign/Lab5/4BitAdderLayout.pex.netlist"
+.INCLUDE "$ADK/technology/ic/models/tsmc018.mod"
+
+
+.OPTION DOTNODE
+.CONNECT GND 0
+* - Instantiate your parasitic netlist and add the load capacitor
+Xlayout4 A[1] A[2] Y[3] Y[2] COUT B[3] A[3] Y[0] B[2] B[1] OP[0] OP[1] Y[1] A[0] B[0] VDD GND layout4
+
+COUT VOUT 0 100f
+
+* - Analysis Setup - DC
+*.DC VFORCE__VIN 0 1.8 0.01
+
+* - Analysis Setup - Trans
+.TRAN 0 100n 0.001n
+
+* --- Forces
+* VFORCE__Vin VIN 0 PULSE (0 1.8 5n 0.1n 0.1n 5n 10n)
+VFORCE__Vdd VDD 0 DC 1.62
+VFORCE_A0 A[0] 0 PULSE (0 1.8  5n 0.1n 0.1n 5n 10n)
+VFORCE_A1 A[1] 0 PULSE (0 1.8  5n 0.1n 0.1n 5n 10n)
+VFORCE_A2 A[2] 0 PULSE (0 1.8  5n 0.1n 0.1n 5n 10n)
+VFORCE_A3 A[3] 0 PULSE (0 1.8  5n 0.1n 0.1n 5n 10n)
+VFORCE_B0 B[0] 0 PULSE (1.8 0 5n 0.1n 0.1n 5n 10n)
+VFORCE_B1 B[1] 0 PULSE (1.8 0 5n 0.1n 0.1n 5n 10n)
+VFORCE_B2 B[2] 0 PULSE (1.8 0 5n 0.1n 0.1n 5n 10n)
+VFORCE_B3 B[3] 0 PULSE (1.8 0 5n 0.1n 0.1n 5n 10n)
+VFORCE_Cin Cin 0 PULSE (0 1.8  5n 0.1n 0.1n 5n 10n) 
+
+
+* --- Waveform Outputs
+.PLOT TRAN V(Sum[0]) V(Sum[2]) V(Sum[1]) V(Sum[3])
+.PLOT TRAN V(Cout)
+.PLOT TRAN V(A[3]) V(A[2]) V(A[1]) V(A[0])
+.PLOT TRAN V(B[3]) V(B[2]) V(B[1]) V(B[0])
+.PLOT TRAN V(Cin)
+
+* --- Params
+.TEMP 125

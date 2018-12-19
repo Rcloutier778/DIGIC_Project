@@ -1,4 +1,7 @@
 python autoIntCreationScript.py
-chmod +x autoInstDOFILE
-ic -nod -dofile /home/rxc1028/digicdesign/project/autoInstDOFILE > zlog.txt
-vim zlog.txt
+chmod +x schm_DOFILE
+da_ic -nod -dofile schm_DOFILE
+chmod +x viewpoint_DOFILE
+dve_ic -nod -dofile viewpoint_DOFILE
+chmod +x DOFILE
+ic -nod -dofile DOFILE &

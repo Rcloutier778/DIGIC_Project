@@ -39,9 +39,10 @@ signal reset : std_logic := '0' ;
 signal SI : std_logic := '0'; --scan chain input (serial input used to set all weights and bias values in network for testing)
 signal SE : std_logic := '0'; --
 signal u : std_logic_vector(N*(Qm+Qn+1)-1 downto 0) := (others => '0');        
-signal u_all : std_logic_vector(65535*(Qm+Qn+1)-1 downto 0) := (others=>'0');
+signal u_all : std_logic_vector(65536*(Qm+Qn+1)-1 downto 0) := (others=>'0');
 --Outputs
 signal yhat : std_logic_vector(M*(Qm+Qn+1)-1 downto 0) := (others => '0');
+signal yhat_all : std_logic_vector(255*(Qn+Qm+1)-1 downto 0) := (others=> '0');
 
 --Clock period defs
 constant clk_period : time := 10ns;
@@ -78,6 +79,8 @@ stim_proc: process
     variable row : integer :=0;
     variable col : integer :=0;
     variable index : integer :=0;
+    variable v_line : line;
+    variable wout : integer := 0;
     begin
     
     reset <= '0';
@@ -102,9 +105,19 @@ stim_proc: process
         for row in 1 to 255 loop
             u <= u_all(row*N*(Qm+Qn+1)-1 downto (row-1)*N*(Qm+Qn+1));
             wait for 1000 ns;
+            yhat_all(row*M*(Qm+Qn+1)-1 downto (row-1)*M*(Qm+Qn+1)) <= yhat;
         end loop;
         
     end if;
+    file_open(file_v,"matlab/test1Output.txt",write_mode);
+    row :=0;
+    col :=0;
+    for a in 1 to 255 loop
+        write(v_line, yhat_all(a*(Qm+Qn+1)-1 downto (a-1)*(Qm+Qn+1)));
+        writeline(file_v, v_line);
+
+    end loop;
+    file_close(file_v);
     wait;
 
 end process;
@@ -144,9 +157,9 @@ begin
             read(v_line, v_std);
             u_all((col+1)*(Qm+Qn+1)-1 downto col*(Qm+Qn+1)) <= v_std;
             col := col + 1;
-			if col >= 65535 then 
-				exit;
-			end if;
+			--if col >= 65535 then 
+			--	exit;
+			--end if;
         end loop;
         file_close(file_v);
         wait for clk_period *2;
@@ -156,7 +169,6 @@ begin
         
     end if;
 end process;
-
 
 
 end;

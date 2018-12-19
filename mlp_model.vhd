@@ -50,7 +50,7 @@ architecture beh of mlp_model is
 	
 
     
-    process (clk, W, u, SE, SI, reset, x, s, fs)
+    process (clk, W, u, SE, SI, reset, x, s, fs, EOF_W)
     variable a : integer := 0; --loop 
     variable b : integer := 0;
     variable tempS : signed(Qm+Qn downto 0) := (others=>'0');

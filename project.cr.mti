@@ -1,9 +1,26 @@
-/home/rxc1028/digicdesign/project/mlp_model.vhd {1 {vcom -work work -2002 -explicit -novopt /home/rxc1028/digicdesign/project/mlp_model.vhd
+/home/rxc1028/digicdesign/project/sigmoid_testbench.vhd {2 {vcom -work work -2002 -explicit -novopt /home/rxc1028/digicdesign/project/sigmoid_testbench.vhd
 QuestaSim-64 vcom 10.2c_6 Compiler 2013.12 Dec 17 2013
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity sigmoid_testbench
+-- Compiling architecture beh of sigmoid_testbench
+** Warning: [9] /home/rxc1028/digicdesign/project/sigmoid_testbench.vhd(33): (vcom-1049) Actual for generic "Qm" depends on value of signal "Qm".
+** Warning: [9] /home/rxc1028/digicdesign/project/sigmoid_testbench.vhd(34): (vcom-1049) Actual for generic "Qn" depends on value of signal "Qn".
+** Warning: [9] /home/rxc1028/digicdesign/project/sigmoid_testbench.vhd(26): (vcom-1013) Subtype of "ieee.std_logic_1164.STD_LOGIC_VECTOR" depends on value of signal "Qn".
+** Warning: [9] /home/rxc1028/digicdesign/project/sigmoid_testbench.vhd(26): (vcom-1013) Subtype of "ieee.std_logic_1164.STD_LOGIC_VECTOR" depends on value of signal "Qm".
+** Warning: [9] /home/rxc1028/digicdesign/project/sigmoid_testbench.vhd(28): (vcom-1013) Subtype of "ieee.std_logic_1164.STD_LOGIC_VECTOR" depends on value of signal "Qn".
+** Warning: [9] /home/rxc1028/digicdesign/project/sigmoid_testbench.vhd(28): (vcom-1013) Subtype of "ieee.std_logic_1164.STD_LOGIC_VECTOR" depends on value of signal "Qm".
+
+} {} {}} /home/rxc1028/digicdesign/project/mlp_model.vhd {1 {vcom -work work -2002 -explicit -novopt /home/rxc1028/digicdesign/project/mlp_model.vhd
+QuestaSim-64 vcom 10.2c_6 Compiler 2013.12 Dec 17 2013
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package adk_components
 -- Compiling entity mlp_model
 -- Compiling architecture beh of mlp_model
 
@@ -13,11 +30,37 @@ QuestaSim-64 vcom 10.2c_6 Compiler 2013.12 Dec 17 2013
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
+-- Loading package adk_components
 -- Compiling entity fast_sigmoid
 -- Compiling architecture beh of fast_sigmoid
-** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(26): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
-** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(31): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
-** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(37): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
-** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(77): (vcom-1073) Non-locally static choice (association #1, choice #1) is allowed only if it is the only choice of the only association.
+** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(25): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
+** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(30): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
+** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(36): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
+** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(76): (vcom-1073) Non-locally static choice (association #1, choice #1) is allowed only if it is the only choice of the only association.
+** Warning: /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(79): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
+** Warning: [9] /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(27): (vcom-1013) Initial value of "case1" depends on value of signal "case1_dec".
+** Warning: [9] /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(27): (vcom-1013) Initial value of "case1" depends on value of signal "case1_int".
+** Warning: [9] /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(32): (vcom-1013) Initial value of "case2_dec_fin" depends on value of signal "case2_dec".
+** Warning: [9] /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(33): (vcom-1013) Initial value of "case2" depends on value of signal "case2_dec_fin".
+** Warning: [9] /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(33): (vcom-1013) Initial value of "case2" depends on value of signal "case2_int".
+** Warning: [9] /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(38): (vcom-1013) Initial value of "case3" depends on value of signal "case3_dec".
+** Warning: [9] /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(38): (vcom-1013) Initial value of "case3" depends on value of signal "case3_int".
+** Warning: [9] /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(46): (vcom-1013) Initial value of "case1_mult_dec_fin" depends on value of signal "case1_mult_dec".
+** Warning: [9] /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(47): (vcom-1013) Initial value of "case1_mult" depends on value of signal "case1_mult_dec_fin".
+** Warning: [9] /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(47): (vcom-1013) Initial value of "case1_mult" depends on value of signal "case1_mult_int".
+** Warning: [9] /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(51): (vcom-1013) Initial value of "case2_mult_dec_fin" depends on value of signal "case2_mult_dec".
+** Warning: [9] /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(52): (vcom-1013) Initial value of "case2_mult" depends on value of signal "case2_mult_dec_fin".
+** Warning: [9] /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(52): (vcom-1013) Initial value of "case2_mult" depends on value of signal "case2_mult_int".
+** Warning: [9] /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(57): (vcom-1013) Initial value of "case3_mult_dec_fin" depends on value of signal "case3_mult_dec".
+** Warning: [9] /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(58): (vcom-1013) Initial value of "case3_mult" depends on value of signal "case3_mult_dec_fin".
+** Warning: [9] /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(58): (vcom-1013) Initial value of "case3_mult" depends on value of signal "case3_mult_int".
+** Warning: [9] /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(65): (vcom-1013) Initial value of "case1_add_dec_fin" depends on value of signal "case1_add_dec".
+** Warning: [9] /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(66): (vcom-1013) Initial value of "case1_add" depends on value of signal "case1_add_dec_fin".
+** Warning: [9] /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(66): (vcom-1013) Initial value of "case1_add" depends on value of signal "case1_add_int".
+** Warning: [9] /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(71): (vcom-1013) Initial value of "case2_add_dec_fin" depends on value of signal "case2_add_dec".
+** Warning: [9] /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(72): (vcom-1013) Initial value of "case2_add" depends on value of signal "case2_add_dec_fin".
+** Warning: [9] /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(72): (vcom-1013) Initial value of "case2_add" depends on value of signal "case2_add_int".
+** Warning: [9] /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(77): (vcom-1013) Initial value of "case3_add" depends on value of signal "case3_add_dec".
+** Warning: [9] /home/rxc1028/digicdesign/project/fast_sigmoid.vhd(77): (vcom-1013) Initial value of "case3_add" depends on value of signal "case3_add_int".
 
 } {} {}}

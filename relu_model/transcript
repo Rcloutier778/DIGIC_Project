@@ -1,0 +1,66 @@
+# //  Questa Sim-64
+# //  Version 10.2c_6 linux_x86_64 Dec 17 2013
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading project project
+# reading /tools/mentor/ams/2013.12.2d/questasim/v10.2c_6/linux_x86_64/../modelsim.ini
+# Loading project relu_project
+# Compile of mlp_model.vhd failed with 1 errors.
+# Compile of testbench.vhd was successful with warnings.
+# 2 compiles, 1 failed with 1 error. 
+vmap adk /tools/mentor/adk/technology/adk_vhdl
+# Modifying /home/rxc1028/digicdesign/project/relu_model/relu_project.mpf
+# Compile of mlp_model.vhd was successful.
+# Compile of testbench.vhd was successful with warnings.
+# 2 compiles, 0 failed with no errors. 
+vsim testbench
+# vsim testbench 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.testbench(beh)
+# Loading adk.adk_components(body)
+# Loading work.mlp_model(beh)
+add wave -position insertpoint  \
+sim/:testbench:reset \
+sim/:testbench:SI \
+sim/:testbench:SE \
+sim/:testbench:u \
+sim/:testbench:u_all \
+sim/:testbench:yhat \
+sim/:testbench:wLoaded \
+sim/:testbench:W
+# (vsim-4077) Logging very large object: :testbench:u_all 
+run
+run
+# Compile of mlp_model.vhd was successful.
+# Compile of testbench.vhd was successful with warnings.
+# 2 compiles, 0 failed with no errors. 
+restart
+# Loading work.testbench(beh)
+# Loading work.mlp_model(beh)
+run
+add wave -position insertpoint  \
+sim/:testbench:uut:u \
+sim/:testbench:uut:yhat \
+sim/:testbench:uut:x \
+sim/:testbench:uut:W
+restart
+run
+# Compile of mlp_model.vhd was successful.
+# Compile of testbench.vhd was successful with warnings.
+# 2 compiles, 0 failed with no errors. 
+restart
+# Loading work.testbench(beh)
+# Loading work.mlp_model(beh)
+add wave -position insertpoint  \
+sim/:testbench:uut:testSig
+run

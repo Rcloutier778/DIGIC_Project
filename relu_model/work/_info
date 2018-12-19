@@ -1,0 +1,96 @@
+m255
+K4
+z2
+13
+cModel Technology
+d/home/rxc1028/digicdesign/project
+!s112 0.1
+!i10d 8192
+!i10e 25
+!i10f 100
+Emlp_model
+Z0 w1544888925
+Z1 DPx3 adk 14 adk_components 0 22 i1M1`@[Sok^nkGJNOQKa20
+Z2 DPx4 ieee 11 numeric_std 0 22 WES[o8HS0jHV[MIXQk2Ha1
+Z3 DPx3 std 6 textio 0 22 Y8d?=bLj9m4jiPLbo;>GT0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 1bm?@Gd;P>[>_lN8Do9gP3
+Z5 d/home/rxc1028/digicdesign/project/relu_model
+Z6 8/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd
+Z7 F/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd
+l0
+L8
+V6n2W00[^jGZ1nZ5H;PlG[0
+Z8 OL;C;10.2c_6;57
+32
+Z9 !s110 1544888936
+Z10 !s108 1544888936.773100
+Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-novopt|/home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd|
+Z12 !s107 /home/rxc1028/digicdesign/project/relu_model/mlp_model.vhd|
+Z13 o-work work -2002 -explicit
+Z14 tExplicit 1 CreateSource 1
+!s100 chmUkhG^Uo6kH=IU7Db7E3
+!i10b 1
+!i111 1
+Abeh
+R1
+R2
+R3
+R4
+DEx4 work 9 mlp_model 0 22 6n2W00[^jGZ1nZ5H;PlG[0
+l34
+L25
+VHoDL1o6UUGfi=2X:TaPFS0
+R8
+32
+R9
+R10
+R11
+R12
+R13
+R14
+!s100 5f77=U[4^W;R]AN=4NnFZ3
+!i10b 1
+!i111 1
+Etestbench
+Z15 w1544804488
+Z16 DPx4 ieee 16 std_logic_textio 0 22 E=LR>a2bb_I?VV>QDdAdh3
+R2
+R3
+R4
+R5
+Z17 8/home/rxc1028/digicdesign/project/relu_model/testbench.vhd
+Z18 F/home/rxc1028/digicdesign/project/relu_model/testbench.vhd
+l0
+L7
+VMCAHk7;JoBPX8A=VgXLN]0
+!s100 ]L5eTeB=]obT63o62b9CN1
+R8
+32
+Z19 !s110 1544888942
+!i10b 1
+Z20 !s108 1544888942.369140
+Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-novopt|/home/rxc1028/digicdesign/project/relu_model/testbench.vhd|
+Z22 !s107 /home/rxc1028/digicdesign/project/relu_model/testbench.vhd|
+!i111 1
+R13
+R14
+Abeh
+R16
+R2
+R3
+R4
+Z23 DEx4 work 9 testbench 0 22 MCAHk7;JoBPX8A=VgXLN]0
+l54
+L10
+Z24 V^zZfQZjNJ_ARV`U4<B<aC1
+Z25 !s100 o4X8::HDWkH4Ti;W7C]j70
+R8
+32
+R19
+!i10b 1
+R20
+R21
+R22
+!i111 1
+R13
+R14

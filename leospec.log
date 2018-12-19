@@ -1,15 +1,117 @@
-/tools/mentor/leonardo/2008b/bin/Linux/spectrum 
+/tools/mentor/leonardo/2008b/bin/Linux/spectrum -file Register8_script 
 -------------------------------------------------
 LeonardoSpectrum Level 3 - 2008b.3 (Release Production Release, compiled Dec  8 2008 at 13:18:31)
 Copyright 1990-2008 Mentor Graphics.  All rights reserved.
 Portions copyright 1991-2008 Compuware Corporation
 
 Checking Security ...
+Reading library file `/tools/mentor/adk/technology/leonardo/tsmc018_typ.syn`...
+Library version = v3.1 Release : Patch (a) : (Aug 26, 2005)
+Delays assume: Process=typical Temp=  0.0 C  Voltage=1.80 V  
+Info: setting encoding to auto
+-- Reading file /tools/mentor/leonardo/2008b/data/standard.vhd for unit standard
+-- Loading package standard into library std
+-- Reading vhdl file /home/rxc1028/digicdesign/project/fast_sigmoid.vhd into library work
+-- Reading file /tools/mentor/leonardo/2008b/data/std_1164.vhd for unit std_logic_1164
+-- Loading package std_logic_1164 into library ieee
+-- Reading file /tools/mentor/leonardo/2008b/data/numeric_std.vhd for unit numeric_std
+-- Loading package NUMERIC_STD into library ieee
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 5: Warning, adk_components is not declared in library adk.
+-- Loading entity fast_sigmoid into library work
+-- Loading architecture beh of fast_sigmoid into library work
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 25: Warning, signal case1_int is never used.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 26: Warning, signal case1_dec is never used.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 30: Warning, signal case2_int is never used.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 31: Warning, signal case2_dec is never used.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 32: Warning, signal case2_dec_fin is never used.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 36: Warning, signal case3_int is never used.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 37: Warning, signal case3_dec is never used.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 44: Warning, signal case1_mult_int is never used.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 45: Warning, signal case1_mult_dec is never used.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 46: Warning, signal case1_mult_dec_fin is never used.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 49: Warning, signal case2_mult_int is never used.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 50: Warning, signal case2_mult_dec is never used.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 51: Warning, signal case2_mult_dec_fin is never used.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 55: Warning, signal case3_mult_int is never used.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 56: Warning, signal case3_mult_dec is never used.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 57: Warning, signal case3_mult_dec_fin is never used.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 63: Warning, signal case1_add_int is never used.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 64: Warning, signal case1_add_dec is never used.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 65: Warning, signal case1_add_dec_fin is never used.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 69: Warning, signal case2_add_int is never used.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 70: Warning, signal case2_add_dec is never used.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 71: Warning, signal case2_add_dec_fin is never used.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 75: Warning, signal case3_add_int is never used.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 76: Warning, signal case3_add_dec is never used.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 80: Warning, signal notif is never used.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 81: Warning, signal abs_ss is never used.
+-- Reading vhdl file /home/rxc1028/digicdesign/project/mlp_model.vhd into library work
+"/home/rxc1028/digicdesign/project/mlp_model.vhd",line 5: Warning, adk_components is not declared in library adk.
+-- Loading entity mlp_model into library work
+-- Loading architecture beh of mlp_model into library work
+"/home/rxc1028/digicdesign/project/mlp_model.vhd",line 54: Warning, variable a is never used.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd",line 55: Warning, variable b is never used.
+-- Compiling root entity mlp_model(beh)
+"/home/rxc1028/digicdesign/project/mlp_model.vhd",line 28: Warning, initial value for x is ignored for synthesis.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd",line 31: Warning, initial value for W is ignored for synthesis.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd",line 33: Warning, initial value for s is ignored for synthesis.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd",line 34: Warning, initial value for fs is ignored for synthesis.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd",line 35: Warning, initial value for EOF_W is ignored for synthesis.
+-- Compiling entity fast_sigmoid_4_4(beh)
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 20: Warning, initial value for tempS is ignored for synthesis.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 80: Warning, initial value for notif is ignored for synthesis.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 81: Warning, initial value for abs_ss is ignored for synthesis.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 85: Warning, initial value for abs_s is ignored for synthesis.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 86: Warning, initial value for tfs is ignored for synthesis.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 92: Warning, case1 should be declared on the sensitivity list of the process.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 97: Warning, case2 should be declared on the sensitivity list of the process.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 101: Warning, case1_mult should be declared on the sensitivity list of the process.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 102: Warning, case1_add should be declared on the sensitivity list of the process.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 102: Warning, tempS should be declared on the sensitivity list of the process.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 103: Warning, case3 should be declared on the sensitivity list of the process.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 107: Warning, case2_mult should be declared on the sensitivity list of the process.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 108: Warning, case2_add should be declared on the sensitivity list of the process.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 109: Warning, case4 should be declared on the sensitivity list of the process.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 113: Warning, case3_mult should be declared on the sensitivity list of the process.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 114: Warning, case3_add should be declared on the sensitivity list of the process.
+"/home/rxc1028/digicdesign/project/fast_sigmoid.vhd",line 20: Warning, tempS is not always assigned. Storage may be needed..
+"/home/rxc1028/digicdesign/project/mlp_model.vhd",line 56: Warning, initial value for tempS is ignored for synthesis.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd",line 57: Warning, initial value for tempSS is ignored for synthesis.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd",line 58: Warning, initial value for W_Index_Counter is ignored for synthesis.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd",line 59: Warning, initial value for W_Node_Counter is ignored for synthesis.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd",line 60: Warning, initial value for W_Node_Counter2 is ignored for synthesis.
+Info: setting auto_dissolve_limit to (1000000)
+Info: setting asic_auto_dissolve_limit to (1000000)
+Info: The target technology was not selected, tsmc018_typ was automatically selected for you.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd", line 122:Info, 8 adders in series feeding nets 'nx79090' to 'nx79082', were balanced.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd", line 122:Info, 8 adders in series feeding nets 'nx79332' to 'nx79324', were balanced.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd", line 122:Info, 8 adders in series feeding nets 'nx79574' to 'nx79566', were balanced.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd", line 122:Info, 8 adders in series feeding nets 'nx79816' to 'nx79808', were balanced.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd", line 122:Info, 8 adders in series feeding nets 'nx80058' to 'nx80050', were balanced.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd", line 122:Info, 8 adders in series feeding nets 'nx80300' to 'nx80292', were balanced.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd", line 122:Info, 8 adders in series feeding nets 'nx80542' to 'nx80534', were balanced.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd", line 122:Info, 8 adders in series feeding nets 'nx80784' to 'nx80776', were balanced.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd", line 122:Info, 8 adders in series feeding nets 'nx81026' to 'nx81018', were balanced.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd", line 122:Info, 8 adders in series feeding nets 'nx81268' to 'nx81260', were balanced.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd", line 122:Info, 8 adders in series feeding nets 'nx81510' to 'nx81502', were balanced.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd", line 122:Info, 8 adders in series feeding nets 'nx81752' to 'nx81744', were balanced.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd", line 122:Info, 8 adders in series feeding nets 'nx81994' to 'nx81986', were balanced.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd", line 122:Info, 8 adders in series feeding nets 'nx82236' to 'nx82228', were balanced.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd", line 122:Info, 8 adders in series feeding nets 'nx82478' to 'nx82470', were balanced.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd", line 122:Info, 8 adders in series feeding nets 'nx82720' to 'nx82712', were balanced.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd", line 122:Info, 8 adders in series feeding nets 'nx82962' to 'nx82954', were balanced.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd", line 122:Info, 8 adders in series feeding nets 'nx83204' to 'nx83196', were balanced.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd", line 122:Info, 8 adders in series feeding nets 'nx83446' to 'nx83438', were balanced.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd", line 122:Info, 8 adders in series feeding nets 'nx83688' to 'nx83680', were balanced.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd", line 122:Info, 8 adders in series feeding nets 'nx83930' to 'nx83922', were balanced.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd", line 141:Info, 20 adders in series feeding nets 'nx84508' to 'nx84500', were balanced.
+"/home/rxc1028/digicdesign/project/mlp_model.vhd", line 80:Info, Inferred counter instance 'W_Index_Counter' of type 'counter_up_sclear_clock_clk_en_4'
+"/home/rxc1028/digicdesign/project/mlp_model.vhd", line 84:Info, Inferred counter instance 'W_Node_Counter2' of type 'counter_up_sclear_clock_clk_en_5'
+"/home/rxc1028/digicdesign/project/mlp_model.vhd", line 88:Info, Inferred counter instance 'W_Node_Counter' of type 'counter_up_sclear_clock_clk_en_5'
+-- Optimizing netlist .work.mlp_model.beh
+-- Automatic IO buffer insertion...
+WARNING: cannot do IO mapping. Library has no plain input IO buffer
+Warning, View .work.mlp_model.beh needs partitioning, you may want to optimize this block in "auto dissolve" hierachy mode...
+Warning, View .work.mlp_model.beh needs partitioning, you may want to optimize this block in "auto dissolve" hierachy mode...
+optimize: interrupted
 
-   *** Welcome to Interactive LeonardoSpectrum Level 3 Version 2008b.3 ***
-
-News :
-  * Enter "help" to get an overview of all commands
-  * Enter <command> -help  to get usage of each command
-
-Session history will be logged to file '/home/rxc1028/digicdesign/project/leospec.his'

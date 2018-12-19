@@ -1,6 +1,8 @@
 load_library /tools/mentor/adk/technology/leonardo/tsmc018_typ.syn
 read {fast_sigmoid.vhd mlp_model.vhd}
 ungroup -all -hier
+set auto_dissolve_limit (1000000)
+set asic_auto_dissolve_limit (1000000)
 set sdf_write_flat_netlist TRUE
 optimize
 write -format verilog mlp_model.v

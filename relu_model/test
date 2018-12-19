@@ -1,0 +1,146 @@
+usage : "/tools/mentor/leonardo/2008b/bin/Linux/spectrum" 
+   [-file <string>]        -- script_file
+   [-session_file <string>]-- override default session history filename
+   [-nosession_file]       -- dont generate a session history file
+   [-logfile <string>]     -- log_file_name
+   [-nologfile]            -- dont generate a log file
+   [-product <string>]     -- <ls1|ls2|ls3> Invokes ls1 or ls2 license instead of the default (ls3).
+   [-batchhelp]            -- give help on command line options for batch mode
+   [-no_mti]               -- Disable MTI licensing
+   [-no_mgls]              -- Disable Mentor licensing
+usage : "/tools/mentor/leonardo/2008b/bin/Linux/spectrum" [<input_file> .... <input_file> <output_file>]
+   [-session_file <string>]-- override default session history filename
+   [-nosession_file]       -- dont generate a session history file
+   [-logfile <string>]     -- log_file_name
+   [-nologfile]            -- dont generate a log file
+   [-source <list>]        -- (list of) source technologies
+   [-target <string>]      -- the target technology
+   [-hierarchy_flatten]|[-hierarchy_preserve]|[-hierarchy_auto]-- flatten, preserve or auto dissolve (default auto dissolve)
+   [-area]|[-delay]|[-auto]  -- optimize to obtain minimum delay, area or to automatically find the best result
+   [-chip]|[-macro]         -- automatic IO buffer insertion (chip)(default)
+   [-input_format <string>]-- vhdl|verilog|EDIF|XNF
+   [-output_format <string>]-- vhdl|verilog|EDIF|XNF
+   [-reformat]|[-remap]|[-quick]|[-standard]|[-effort <string>]-- optimization effort : analyze|back_annotate|reformat|remap|quick|standard|ipo
+   [-pass <list>]|[-nopass <list>]-- Explicitly control which pass(es) will be executed
+   [-command_file <list>]  -- command_file_name(s)
+   [-summary <string>]     -- summary_file_name
+   [-nosummary]            -- dont generate a summary file
+   [-control <string>]     -- control_file_name
+   [-nocontrol]            -- dont use a control file
+   [-edif_file <string>]   -- write out EDIF file of synthesized design
+   [-edif_timing_file <string>]-- write out EDIF file for timing analysis
+   [-design <string>]      -- treat this design as top level design
+   [-edif_adl_flavor]      -- write out EDIF with legal adl naming
+   [-highlight_file <string>]-- critical path highlighting file for netscope
+   [-preference_filename <string>]-- Generate the Preference file for ORCA
+   [-ncf_filename <string>]-- Generate the Netlist constraint file for Xilinx
+   [-sdf_in <string>]      -- SDF input file for backannotating delays
+   [-timing_file <string>] -- Specify Timing file, dly format for Virtex, sdf for Apex
+   [-sdf_out <string>]     -- SDF output file for simulation
+   [-sdf_type <string>]    -- use minumum|typical|maximum(default) delays during reading SDF
+   [-nosdf_hierarchical_names]-- dont treat all SDF names with divider character as hierarchical
+   [-sdf_hier_separator <string>]-- separator for hierarchical names in the SDF writer
+   [-sdf_names_style <string>]-- rename rules for SDF writer
+   [-propagate_clock_delay]-- use non-ideal clock with delay in delay computations
+   [-noopt <list>]         -- design_name [-noopt design_name] ...
+   [-vhdl_file <list>]     -- (list of) vhdl files to analyse before main input file
+   [-verilog_file <list>]  -- (list of) verilog files to analyse before main input file
+   [-vhdl_wrapper <string>]-- Write a VHDL wrapper for post-synthesis-simulation to file <name>
+   [-verilog_wrapper <string>]-- Write a Verilog wrapper for post-synthesis-simulation to file <name>
+   [-viewlogic_vhdl]       -- adjust to Viewlogic style VHDL
+   [-entity <string>]      -- top-level VHDL entity
+   [-architecture <string>]-- top-level VHDL architecture
+   [-generic <list>]       -- top_level generic=value
+   [-encoding <string>]    -- default state encoding; auto(default)|binary|onehot|twohot|gray|random
+   [-vhdl_87]|[-vhdl_93]    -- use vhdl'87 or vhdl'93(default) dialect
+   [-vhdl_write_87]        -- use VHDL'87 style syntax/semantics instead of VHDL'93 for writing VHDL
+   [-vhdl_write_bit <string>]-- type for bit used in VHDL writer. Default is std_logic
+   [-module <string>]      -- top-level Verilog module
+   [-full_case]            -- force Verilog case statements be full (ignore default entry)
+   [-parallel_case]        -- force Verilog case statements to be parallel (mutually exclusive entries)
+   [-modgen_library <list>]-- modgen library or file name
+   [-select_modgen <string>]-- default modgen resolve mode
+   [-temp <string>]        -- temperature to compute delays, in (degrees) C
+   [-voltage <string>]     -- voltage to compute delays, in Volt
+   [-process <string>]     -- process to compute delays
+   [-part <string>]        -- part type for output design
+   [-package <string>]     -- package type for output design
+   [-max_fanin <integer>]  -- maximum fanin of a function
+   [-max_pt <integer>]     -- maximum number of product terms in a function
+   [-lock_lcells]|[-dont_lock_lcells]-- Obsolete. Use 'flex_lock_lcells', 'max_lock_lcells', or 'xi_lock_lcells'
+   |[-flex_lock_lcells]    -- lock or dont lock LCELLs for Altera FLEX technologies. Default is lock.
+   |[-max_lock_lcells]     -- lock or dont lock LCELLs for Altera MAX technologies. Default is dont lock.
+   |[-xi_lock_lcells]      -- lock or dont lock LCELLs for Xilinx CPLD technologies. Default is dont lock.
+   [-nocascades]           -- Don't map to cascade gates during LUT mapping
+   [-nocomplex_ios]        -- disable map to complex IOs for Actel/TI
+   [-nocheck_complex_ios]  -- disable Design Rules Checker for complex ios (Act3)
+   [-xlx_preserve_gsr]     -- preserve Xilinx global reset net
+   [-xlx_preserve_gts]     -- preserve Xilinx global tristate net
+   [-noxlx_fast_slew]      -- Do Not automatically set xi4/xi5 (except xi4h) outputs to FAST.
+   [-global_sr <string>]   -- name of global reset net
+   [-noinfer_global_sr]    -- infer global reset automatically
+   [-noxlx_preserve_pins]  -- preserve Xilinx pin locations when doing Xilinx->Xilinx optimization
+   [-preserve_dangling_net]-- create ports to unconnected nets when reading XNF
+   [-noxnf_eqn]            -- dont write EQN symbols in XNF, use Xilinx primitives instead
+   [-nolut_map]            -- don't use LUT mapping for Xilinx and ORCA
+   [-use_f5map]            -- enable mapping to F5MAP (for XC5200 technology)
+   [-map_muxf5]            -- map to MUXF5 for Xilinx XCV technology
+   [-map_muxf6]            -- map to MUXF6 (implies mapping to MUXF5) for Xilinx XCV technology
+   [-use_f6lut]            -- enable mapping to 6-input LUTs (in LUT based mapping)
+   [-nowrite_lut_binding]  -- disable printing lut binding info
+   [-nomap_global_bufs]    -- don't use global buffers for clocks and other global signals (Xilinx/Actel)
+   [-use_qclk_bufs]        -- use quadrant clocks for actel 3200dx architecture
+   [-insert_global_bufs]   -- use global buffers for clocks and other global signals (Xilinx/Actel)
+   [-max_cap_load <float>] -- override default max_cap_load if specified in the library
+   [-max_fanout_load <float>]-- override default max_fanout_load if specified in the library
+   [-lut_max_fanout <integer>]-- Specify net's fanout for LUT technologies (xilinx, flex & orca)
+   [-noenable_dff_map]     -- disable clock-enable detection from HDLs
+   [-enable_dff_map_optimize]-- enable clock-enables from random logic
+   [-exclude <list>]       -- dont use this gate in mapping
+   [-include <list>]       -- map to specified Synchronous DFFs and DLATCHes in ORCA.
+   [-pal_device]           -- disable map to complex IOs for Actel/TI
+   [-wire_tree <string>]   -- interconnect wire tree : best|balanced|worst(default)
+   [-wire_table <string>]  -- wire load model to use for interconnect delays
+   [-nowire_table]         -- ignore interconnect delays during delay analysis
+   [-nobreak_loops_in_delay]-- don't break combinational loops statically for timing analysis 
+   [-crit_path_analysis_mode <string>]-- maximum(report setup violations) | minimum(report hold violations) | both(default)
+   [-num_crit_paths <integer>]-- number of critical paths to report
+   [-crit_path_slack <float>]-- slack treshold (ns)
+   [-crit_path_arrival <float>]-- arrival treshold (ns)
+   [-crit_path_longest]    -- show longest paths rather than critical paths
+   [-crit_path_detail <string>]-- full(detailed point-to-point)(default) | short(startpoint-endpoint)
+   [-crit_path_no_io_terminals]-- dont report paths terminating in primary outputs
+   [-crit_path_no_int_terminals]-- dont report paths terminating in internal endpoints
+   [-crit_paths_from <list>]-- report only paths starting at this port, port_inst or instance
+   [-crit_paths_to <list>] -- report only paths ending at this port, port_inst or instance
+   [-crit_paths_thru <list>]-- report only critical paths thru this net
+   [-crit_paths_not_thru <list>]-- report only critical paths that do not go thru this net
+   [-crit_path_report_input_pins]-- report input pins of gates. Default is off
+   [-crit_path_report_nets]-- report net names. Default is off
+   [-nocounter_extract]    -- disable automatic extraction of counters
+   [-noram_extract]        -- disable automatic extraction of rams
+   [-nodecoder_extract]    -- disable automatic extraction of decoders
+   [-optimize_cpu_limit <integer>]-- set a cpu limit for optimization
+   [-notimespec_generate]  -- dont create TIMESPEC info from user constraints; Xilinx only
+   [-nopack_clbs]          -- dont pack Look-Up Tables (LUTs) into CLBs. Xi4 only
+   [-write_clb_packing]    -- print clb packing (HBLKNM) info, if available, in XNF/EDIF 
+   [-crit_path_rpt <string>]-- Write critical path reporting in this file
+   [-nocrit_path_rpt]      -- dont create a critical path reporting file
+   [-report_brief]|[-report_full]-- Generate a concise design summary or a detailed one. Default is full
+   [-simple_port_names]    -- Create simple names for vector ports: %s%d instead of %s(%d)
+   [-bus_name_style <string>]-- Naming style for vector ports and nets: default %s(%d)| simple %s%d| old_galileo %s_%d
+   [-nobus]                -- Write busses in expanded form
+   [-nowrite_eqn]          -- dont write equations in output, use technology primitives instead
+   [-nopld_xor_decomp]     -- Dont do XOR decomposition for MAX and Xilinx CPLD technologies
+   [-noglobal_symbol]      -- Delete startup (gsr) block
+   [-hdl_input_location <list>]-- Location of source files, searched after working directory. Can be used more than once.
+   [-notime_opt]           -- Don't run timing optimization
+   [-max_frequency <float>]-- Desired maximum frequency
+   [-edifin_ground_net_names <list>]-- specify that net(s) with given name(s) are ground nets.
+   [-edifin_power_net_names <list>]-- specify that net(s) with given name(s) are power nets.
+   [-edifin_ground_port_names <list>]-- specify that port(s) with given name(s) are ground ports.
+   [-edifin_power_port_names <list>]-- specify that port(s) with given name(s) are power ports.
+   [-edifin_ignore_port_names <list>]-- specify that port(s) with given name(s) are ignore ports.
+   [-edifout_power_ground_style_is_net]-- write out power & ground as undriven nets with special name
+   [-edifout_power_net_name <string>]-- special name for power nets when 'edifout_power_ground_style_is_net' is TRUE, default 'VCC'
+   [-edifout_ground_net_name <string>]-- special name for ground nets when 'edifout_power_ground_style_is_net' is TRUE, default 'GND'

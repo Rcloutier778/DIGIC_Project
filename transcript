@@ -9,7 +9,14 @@
 # //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
 # //
 # Loading project project
+# Compile of testbench.vhd failed with 2 errors.
+# Compile of testbench.vhd failed with 2 errors.
 # Compile of testbench.vhd was successful with warnings.
+# Compile of fast_sigmoid.vhd was successful with warnings.
+# Compile of mlp_model.vhd was successful.
+# Compile of testbench.vhd was successful with warnings.
+# Compile of sigmoid_testbench.vhd was successful with warnings.
+# 4 compiles, 0 failed with no errors. 
 vsim testbench
 # vsim testbench 
 # Loading std.standard
@@ -18,564 +25,65 @@ vsim testbench
 # Loading ieee.numeric_std(body)
 # Loading ieee.std_logic_textio(body)
 # Loading work.testbench(beh)
+# Loading adk.adk_components(body)
 # Loading work.mlp_model(beh)
 # Loading work.fast_sigmoid(beh)
+restart
+run
 add wave -position insertpoint  \
-sim/:testbench:Qm \
-sim/:testbench:Qn \
-sim/:testbench:N \
-sim/:testbench:H \
-sim/:testbench:M \
 sim/:testbench:clk \
 sim/:testbench:reset \
 sim/:testbench:SI \
 sim/:testbench:SE \
 sim/:testbench:u \
+sim/:testbench:u_all \
 sim/:testbench:yhat \
-sim/:testbench:file_v \
-sim/:testbench:clk_period
-# (vsim-4027) Logging is not supported for this item: :testbench:file_v 
-vsim testbench
-# vsim testbench 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading ieee.std_logic_textio(body)
-# Loading work.testbench(beh)
-# Loading work.mlp_model(beh)
-# Loading work.fast_sigmoid(beh)
-add wave -position insertpoint  \
-sim/:testbench:Qm \
-sim/:testbench:Qn \
-sim/:testbench:N \
-sim/:testbench:H \
-sim/:testbench:M \
-sim/:testbench:clk \
-sim/:testbench:reset \
-sim/:testbench:SI \
-sim/:testbench:SE \
-sim/:testbench:u \
-sim/:testbench:yhat \
-sim/:testbench:file_v \
-sim/:testbench:clk_period
+sim/:testbench:yhat_all \
+sim/:testbench:wLoaded \
+sim/:testbench:uDone \
+sim/:testbench:W \
+sim/:testbench:file_v
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 1 times, errno 11
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 2 times, errno 11
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 3 times, errno 11
+# ** Error: Cannot lock WLF file: "vsim.wlf"
+#           errno 11: Resource temporarily unavailable.
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: rxc1028  Hostname: eng-2500-12  ProcessID: 25717
+#           Attempting to use alternate WLF file "./wlftRFPYHM".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftRFPYHM
+# (vsim-4077) Logging very large object: :testbench:u_all 
 # (vsim-4027) Logging is not supported for this item: :testbench:file_v 
 run
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(20):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(20):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(20):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(20):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(19):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(19):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(19):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(19):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(18):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(18):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(18):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(18):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(17):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(17):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(17):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(17):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(16):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(16):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(16):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(16):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(15):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(15):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(15):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(15):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(14):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(14):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(14):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(14):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(13):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(13):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(13):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(13):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(12):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(12):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(12):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(12):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(11):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(11):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(11):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(11):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(10):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(10):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(10):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(10):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(9):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(9):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(9):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(9):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(8):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(8):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(8):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(8):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(7):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(7):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(7):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(7):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(6):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(6):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(6):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(6):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(5):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(5):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(5):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(5):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(4):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(4):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(4):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(4):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(3):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(3):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(3):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(3):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(2):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(2):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(2):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(2):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX
-# ** Fatal: (vsim-3471) Slice range (0 downto -8) does not belong to the prefix index range (80 downto 0).
-#    Time: 10500 ns  Iteration: 1  Process: :testbench:uut:line__51 File: /home/rxc1028/digicdesign/project/mlp_model.vhd
-# Fatal error in ForLoop loop at /home/rxc1028/digicdesign/project/mlp_model.vhd line 111
-# 
-# HDL call sequence:
-# Stopped at /home/rxc1028/digicdesign/project/mlp_model.vhd 111 ForLoop loop
-# 
+run
+# Compile of testbench.vhd failed with 2 errors.
+# Compile of testbench.vhd was successful with warnings.
+restart
+# Loading work.testbench(beh)
+# Warning in wave window restart: (vish-4014) No objects found matching ':testbench:uDone'. 
+run
 # Compile of testbench.vhd was successful with warnings.
 restart
 # Loading work.testbench(beh)
 run
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(20):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(20):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(20):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(20):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(19):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(19):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(19):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(19):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(18):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(18):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(18):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(18):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(17):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(17):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(17):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(17):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(16):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(16):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(16):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(16):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(15):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(15):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(15):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(15):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(14):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(14):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(14):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(14):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(13):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(13):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(13):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(13):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(12):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(12):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(12):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(12):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(11):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(11):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(11):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(11):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(10):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(10):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(10):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(10):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(9):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(9):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(9):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(9):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(8):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(8):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(8):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(8):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(7):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(7):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(7):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(7):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(6):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(6):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(6):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(6):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(5):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(5):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(5):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(5):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(4):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(4):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(4):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(4):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(3):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(3):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(3):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(3):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(2):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(2):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(2):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(2):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX
-# ** Fatal: (vsim-3471) Slice range (0 downto -8) does not belong to the prefix index range (80 downto 0).
-#    Time: 105 ns  Iteration: 1  Process: :testbench:uut:line__51 File: /home/rxc1028/digicdesign/project/mlp_model.vhd
-# Fatal error in ForLoop loop at /home/rxc1028/digicdesign/project/mlp_model.vhd line 111
-# 
-# HDL call sequence:
-# Stopped at /home/rxc1028/digicdesign/project/mlp_model.vhd 111 ForLoop loop
-# 
-add wave -position insertpoint  \
-sim/:testbench:uut:x \
-sim/:testbench:uut:W \
-sim/:testbench:uut:s \
-sim/:testbench:uut:fs
+# Compile of testbench.vhd was successful with warnings.
+restart
+# Loading work.testbench(beh)
+run
+# Compile of testbench.vhd was successful with warnings.
+restart
+# Loading work.testbench(beh)
+run
+run
+run
+run
+restart
 restart
 run
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(20):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(20):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(20):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(20):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(19):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(19):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(19):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(19):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(18):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(18):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(18):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(18):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(17):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(17):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(17):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(17):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(16):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(16):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(16):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(16):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(15):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(15):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(15):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(15):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(14):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(14):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(14):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(14):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(13):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(13):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(13):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(13):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(12):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(12):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(12):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(12):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(11):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(11):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(11):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(11):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(10):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(10):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(10):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(10):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(9):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(9):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(9):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(9):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(8):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(8):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(8):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(8):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(7):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(7):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(7):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(7):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(6):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(6):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(6):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(6):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(5):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(5):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(5):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(5):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(4):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(4):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(4):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(4):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(3):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(3):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(3):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(3):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(2):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(2):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(2):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(2):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: :testbench:uut:GEN_FAST_SIGMOID(1):fast_sigmoidX
-# ** Fatal: (vsim-3471) Slice range (0 downto -8) does not belong to the prefix index range (80 downto 0).
-#    Time: 105 ns  Iteration: 1  Process: :testbench:uut:line__51 File: /home/rxc1028/digicdesign/project/mlp_model.vhd
-# Fatal error in ForLoop loop at /home/rxc1028/digicdesign/project/mlp_model.vhd line 111
-# 
-# HDL call sequence:
-# Stopped at /home/rxc1028/digicdesign/project/mlp_model.vhd 111 ForLoop loop
-# 
-# Causality operation skipped due to absence of debug database file
+# Compile of testbench.vhd was successful with warnings.
+restart
+# Loading work.testbench(beh)
 run
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at /home/rxc1028/digicdesign/project/mlp_model.vhd 111 ForLoop loop
-# 
+restart
+run
